@@ -1,0 +1,12 @@
+body{
+    text-align: center;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr  1fr 1fr;
+}
+
+a{
+    text-align: center;
+}
