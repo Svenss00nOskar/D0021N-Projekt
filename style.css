@@ -1,6 +1,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    display: grid;
+    padding: 0 15px 15px 15px;
 }
 
 header {
@@ -12,26 +14,29 @@ header {
 }
 
 .logo img {
-    height: 40px;
+    height: 70px;
 }
 
 nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-left: 10px;
     flex: 1;
+    align-items: center;
 }
 
 nav a {
+    text-align: center;
+    flex:1;
     text-decoration: none;
     color: #333;
     margin: 5px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 #language-toggle {
     padding: 5px 10px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 .slideshow {
@@ -70,7 +75,7 @@ nav a {
 
 .text-section {
     padding: 0 15px;
-    font-size: 14px;
+    font-size: 15px;
     color: #333;
 }
 
@@ -81,4 +86,18 @@ nav a {
 #clickableImages{
     display: grid;
     grid-template-columns: 1fr  1fr 1fr;
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    img {
+        width: 300px;
+        height: 230px;
+        border-radius: 5%;
+    }
 }
+
+.crop-box img {
+    object-fit: cover;
+}
+  
