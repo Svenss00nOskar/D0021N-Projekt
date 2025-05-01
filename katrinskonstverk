@@ -7,6 +7,66 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Konstverk nr 1</h1>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+            </a>
+        </div>
+        <nav>
+            <a href="AktuellUtställning.html">Aktuell utställning</a>
+            <a href="annan.html">På gång</a>
+            <a href="annan.html">Ta dig hit</a>
+            <a href="annan.html">Odla och äta</a>
+            <a href="annan.html">Butik</a>
+            <a href="annan.html">Arthotell</a>
+            <a href="annan.html">Om oss</a>
+        </nav>
+        <button id="language-toggle">English</button>
+    </header>
+    <div class="main-content">
+        <div class="fixed-image">
+            <div class="image-wrapper">
+                <img id="slideshow-image" src="image1.jpg" alt="Art Image">
+                <div id="image-counter">1/3</div>
+                <button id="prev-button">&#9664;</button>
+                <button id="next-button">&#9654;</button> 
+            </div>
+        </div>
+        <div class="scrolling-content">
+            <h1>Konstverk nr 1</h1>
+            <h2>Subheading 1</h2>
+            <h3>Subheading 2</h3>
+            <p>Here is some text that will scroll while the image stays fixed in place on the left. Add as much text as you want to see the scrolling effect.</p>
+        </div>
+    </div>
+
+    <script>
+        const images = ["image1.jpg", "image2.jpg", "image3.jpg"];
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
+    const imageCounter = document.getElementById("image-counter");
+
+    function updateImage() {
+        slideshowImage.src = images[currentIndex];
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    updateImage();
+    </script>
+    
 </body>
 </html>
