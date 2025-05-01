@@ -12,21 +12,24 @@ header {
 }
 
 .logo img {
-    height: 40px;
+    height: 70px;
 }
 
 nav {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin-left: 10px;
     flex: 1;
+    align-items: center;
 }
 
 nav a {
+    text-align: center;
+    flex:1;
     text-decoration: none;
     color: #333;
     margin: 5px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 #language-toggle {
@@ -81,4 +84,83 @@ nav a {
 #clickableImages{
     display: grid;
     grid-template-columns: 1fr  1fr 1fr;
+}
+
+.main-content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.fixed-image {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 35%; 
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.fixed-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scrolling-content {
+    width: 65%; 
+    padding: 20px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.image-wrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#image-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#prev-button,
+#next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent; 
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 0 5px 5px 0; 
+    color: white; 
+    z-index: 2; 
+}
+
+#prev-button {
+    left: 0;
+}
+
+#next-button {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+#prev-button:hover,
+#next-button:hover {
+    background-color: rgba(0, 0, 0, 0.4);
 }
