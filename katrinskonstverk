@@ -34,10 +34,19 @@
             </div>
         </div>
         <div class="scrolling-content">
-            <h1>Konstverk nr 1</h1>
-            <h2>Subheading 1</h2>
-            <h3>Subheading 2</h3>
-            <p>Here is some text that will scroll while the image stays fixed in place on the left. Add as much text as you want to see the scrolling effect.</p>
+            <h1>Liten katt</h1>
+            <h2>av Vincent Van Gogh</h2>
+            <h3>1792</h3>
+            <p>Detta fina konstverk inspirerades av Tornedalens vildliv. <br>
+                Visste du att det finns över 5000 katter i Tornedalen?</p>
+            <p><i>Utmaning</i><br>Hälsa på 10 katter denna vecka!</p>
+            <p>Titta på denna videon för att se hur detta vackra konstverket togs fram. <br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wk9L1N9bRRE?si=ST5iH3SO2lQzAzK0" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </p>
         </div>
     </div>
 
