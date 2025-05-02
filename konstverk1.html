@@ -4,8 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Konstverk nr 1</h1>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+            </a>
+        </div>
+        <nav>
+            <a href="AktuellUtställning.html">Aktuell utställning</a>
+            <a href="annan.html">På gång</a>
+            <a href="annan.html">Ta dig hit</a>
+            <a href="annan.html">Odla och äta</a>
+            <a href="annan.html">Butik</a>
+            <a href="annan.html">Arthotell</a>
+            <a href="annan.html">Om oss</a>
+        </nav>
+        <button id="language-toggle">English</button>
+    </header>
+    <div class="main-content">
+        <div class="fixed-image">
+            <div class="image-wrapper">
+                <img id="slideshow-image" src="image1.jpg" alt="Art Image">
+                <div id="image-caption" class="image-caption"></div>
+                <div id="image-counter">1/3</div>
+                <button id="prev-button">&#9664;</button>
+                <button id="next-button">&#9654;</button> 
+            </div>
+        </div>
+        <div class="scrolling-content">
+            <h1>Liten katt</h1>
+            <h2>av Vincent Van Gogh</h2>
+            <h3>1792</h3>
+            <p>Detta fina konstverk inspirerades av Tornedalens vildliv. <br>
+                Visste du att det finns över 5000 katter i Tornedalen?</p>
+            <p><i>Utmaning</i><br>Hälsa på 10 katter denna vecka!</p>
+            <p>Titta på denna videon för att se hur detta vackra konstverket togs fram. <br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/wk9L1N9bRRE?si=ST5iH3SO2lQzAzK0" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            { src: "image1.jpg", caption: "Liten katt i vinterlandskap" },
+            { src: "image2.jpg", caption: "" }, // No caption for this image
+            { src: "image3.jpg", caption: "Inspirerad av norrskenet över Tornedalen" }
+        ];
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
+    const imageCounter = document.getElementById("image-counter");
+    const imageCaption = document.getElementById("image-caption");
+
+    function updateImage() {
+        slideshowImage.src = images[currentIndex].src;
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+        const caption = images[currentIndex].caption;
+        imageCaption.textContent = caption;
+        imageCaption.style.display = caption ? "block" : "none";
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    updateImage();
+    </script>
+    
 </body>
 </html>
