@@ -9,7 +9,7 @@ function changeImage() {
 
 setInterval(changeImage, 3000); // Byt bild var 3:e sekund
 
-// Språkknappen
+// SprÃ¥kknappen
 const langButton = document.getElementById('language-toggle');
 langButton.addEventListener('click', () => {
     langButton.textContent = langButton.textContent === "English" ? "Svenska" : "English";
