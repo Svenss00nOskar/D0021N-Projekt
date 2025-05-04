@@ -4,8 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Konstverk nr 3</h1>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+            </a>
+        </div>
+        <nav>
+            <a href="AktuellUtställning.html">Aktuell utställning</a>
+            <a href="annan.html">På gång</a>
+            <a href="annan.html">Ta dig hit</a>
+            <a href="annan.html">Odla och äta</a>
+            <a href="annan.html">Butik</a>
+            <a href="annan.html">Arthotell</a>
+            <a href="annan.html">Om oss</a>
+        </nav>
+        <button id="language-toggle">English</button>
+    </header>
+    <div class="main-content">
+        <div class="fixed-image">
+            <div class="image-wrapper">
+                <img id="slideshow-image" src="image1.jpg" alt="Isälvens viskning">
+                <div id="image-caption" class="image-caption"></div>
+                <div id="image-counter">1/3</div>
+                <button id="prev-button">&#9664;</button>
+                <button id="next-button">&#9654;</button> 
+            </div>
+        </div>
+        <div class="scrolling-content">
+            <h1>Isälvens viskning</h1>
+            <h2>av Alice Forslund</h2>
+            <h3>2004</h3>
+            <p>Välkommen till "Isälvens viskning", en målning som fångar en av naturens mest tysta och mystiska röster – den viskande isälven. I denna bild ser vi isens kalla, reflekterande yta som bär på historier om tider som varit och de krafter som har format landskapet. Genom målningens lugna och mjuka färgskala förmedlas en känsla av frid, men också av en hemlig kraft som ligger latent i varje isflak. Isälven, som en gång var en livskraftig flod under forntida tider, talar till oss genom sina tysta rörelser och ger oss en glimt av en tid för länge sedan.</p>
+            <h3>En viskning från forntiden</h3>
+            <p>"Isälvens viskning" är resultatet av en intensiv period av introspektion för konstnären, Alice Forslund. Under sina många resor till norra Sverige hade Alice alltid fascinerats av de uråldriga landskapen som formats av is och tid. En särskild plats vid en av de gamla isälvarna fångade hennes intresse – en plats där isen, trots sin stillhet, nästan tycktes viska sina hemligheter till de som lyssnade noga.<br><br>
+                Alice ville skapa en målning som fångade denna tysta, nästan andliga närvaro. För henne var isälven inte bara en geologisk formation, utan också en levande entitet som bär på berättelser om klimatförändringar, förlorade civilisationer och de eviga förändringarna i naturen. Genom sina penseldrag och val av färger försökte Alice fånga den tysta viskningen av isen som rör sig genom landskapet – en viskning som påminner oss om naturens kraft att forma och förändra världen omkring oss.<br><br>
+                Verket speglar också Alice egen resa som konstnär. Hon berättar att hon under arbetet med "Isälvens viskning" var tvungen att hitta ett sätt att lyssna till sin egen inre tystnad för att kunna tolka isälvens viskande röst. Målningen, som är både stillsam och mystisk, bär på en känsla av att vara i kontakt med något större än oss själva – något tidlöst och evigt.
+            </p>
+            <p><i>Visste du att is kan sjunga, på riktigt? Här kan du höra hur det låter!</i><br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/chxn2szgEAg?si=TzCLwrxRCmc7o2eo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            { src: "bild3.png", caption: "" },
+            { src: "k3b2.jpg", caption: "Från skiss till målning – Här kan man se de mjuka linjerna och skuggorna som senare skulle bli själva isälvens tysta viskning." }, 
+            { src: "k3b3.jpg", caption: "En plats som inspirerade Alice Forslunds konst." }
+        ];
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
+    const imageCounter = document.getElementById("image-counter");
+    const imageCaption = document.getElementById("image-caption");
+
+    function updateImage() {
+        slideshowImage.src = images[currentIndex].src;
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+        const caption = images[currentIndex].caption;
+        imageCaption.textContent = caption;
+        imageCaption.style.display = caption ? "block" : "none";
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    updateImage();
+    </script>
+    
 </body>
 </html>
