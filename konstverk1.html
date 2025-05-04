@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Konsthall Tornedalen</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,13 +14,13 @@
             </a>
         </div>
         <nav>
-            <a href="AktuellUtställning.html">Aktuell utställning</a>
-            <a href="pa_gang.html">På gång</a>
-            <a href="ta_dig_hit.html">Ta dig hit</a>
-            <a href="odla_och_ata.html">Odla och äta</a>
-            <a href="butik.html">Butik</a>
-            <a href="arthotell.html">Arthotell</a>
-            <a href="index.html">Om oss</a>
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+            <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
+            <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
+            <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
+            <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
+            <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
+            <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
         </nav>
         <button id="language-toggle">English</button>
     </header>
@@ -58,34 +58,14 @@
             { src: "k1b2.jpg", caption: "Elin Norrströms arbetsplats - Här skapas all magi som fångar naturens andakt." },
             { src: "k1b3.jpg", caption: "Den verkliga världen som inspirerade Elin Norrström. Den stillsamma, dimmiga morgonen där naturen berättade sin egen historia." }
         ];
-    let currentIndex = 0;
-
-    const slideshowImage = document.getElementById("slideshow-image");
-    const nextButton = document.getElementById("next-button");
-    const prevButton = document.getElementById("prev-button");
-    const imageCounter = document.getElementById("image-counter");
-    const imageCaption = document.getElementById("image-caption");
-
-    function updateImage() {
-        slideshowImage.src = images[currentIndex].src;
-        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-        const caption = images[currentIndex].caption;
-        imageCaption.textContent = caption;
-        imageCaption.style.display = caption ? "block" : "none";
-    }
-
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
-    });
-
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-
-    updateImage();
     </script>
 
+    <!--
+    Placed AFTER the HTML content in order to resolve which in Mozilla Firefox is described as follows: "Uncaught
+    TypeError: [some object] is null". May show as a warning: "Layouten tvingades innan sidan laddades fullständigt.
+    Om stilmallen inte har laddats ännu kan det orsaka en blixt av ostylat innehåll." / "The layout was forced before
+    the page was fully loaded. If the stylesheet has not yet loaded, this may cause a flash of unstyled content."
+    -->
+    <script src="script.js"></script>
 </body>
 </html>

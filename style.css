@@ -1,9 +1,11 @@
+
 /* To see these borders of the "gB" class during development, "turn on" by removing the comment tags around it. */
 
 /*
 div.gB {outline: 1px solid tomato;}
 header.gB {outline: 1px solid cyan;}
 section.gB {outline: 1px solid royalblue;}
+p.gB {outline: 1px solid lightgreen;}
 */
 
 
@@ -42,7 +44,7 @@ nav {
 
 nav a {
     text-align: center;
-    flex:1;
+    flex: 1;
     text-decoration: none;
     color: black; /* needs to be set here since it's links; originally #333 by ChatGPT */
     margin: 5px;
@@ -51,6 +53,14 @@ nav a {
 
 #language-toggle {
     padding: 5px 10px;
+    width: 74px;
+}
+
+
+.emptyPageTxt {
+	font-size: 20px;
+	text-align: center;
+	margin-top: 100px;
 }
 
 

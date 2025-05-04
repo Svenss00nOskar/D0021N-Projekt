@@ -1,32 +1,39 @@
 
 //23456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567 |
 
-let slideWithCaptionBoxes = document.querySelectorAll('.slideWithCaptionBox'); // all elements of this class
-let currentSlideWithCaption = 0;
-let interval = null;
-let paused = false;
 
-// Bildspelet
-//const images = ["renar.jpg", "solnedgang.avif", "gobelang.jpg"];
-//let index = 0;
+/* The following belongs to the language button (språkknappen) and translation in the navigational menu. */
 
-/*
-function changeImage() {
-    index = (index + 1) % images.length;
-    document.getElementById("slide-image").src = images[index];
+function updateLanguage(lang) {
+  document.querySelectorAll("[data-sv][data-en]").forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.textContent = text;
+  });
+
+  // Uppdatera knappen
+  const toggleButton = document.getElementById("language-toggle");
+  toggleButton.textContent = lang === "sv" ? "English" : "Svenska";
 }
-*/
 
-//setInterval(changeImage, 3000); // Byt bild var 3:e sekund
+// Läs språkinställning från localStorage eller default till svenska
+let currentLanguage = localStorage.getItem("language") || "sv";
+updateLanguage(currentLanguage);
 
-// Språkknappen
-const langButton = document.getElementById('language-toggle');
-langButton.addEventListener('click', () => {
-    langButton.textContent = langButton.textContent === "English" ? "Svenska" : "English";
+// När användaren klickar på knappen
+document.getElementById("language-toggle").addEventListener("click", () => {
+  currentLanguage = currentLanguage === "sv" ? "en" : "sv";
+  localStorage.setItem("language", currentLanguage);
+  updateLanguage(currentLanguage);
 });
 
 
 
+/* The following belongs to the image transitioning slide show (bildspelet) on the index.html page. */
+
+let slideWithCaptionBoxes = document.querySelectorAll('.slideWithCaptionBox'); // all elements of this class
+let currentSlideWithCaption = 0;
+let interval = null;
+let paused = false;
 
 /* Sets the size of the slideshowBox (as a function of its contained images of varying sizes).
  */
@@ -99,5 +106,79 @@ slideshowBox.addEventListener('click', () => {
 
 showSlide(currentSlideWithCaption);
 startSlideshow();
+
+
+
+/* The following belongs to the AktuellUtställning.html. */
+
+        const modal = document.getElementById("quiz-modal");
+        const openBtn = document.getElementById("open-quiz-btn");
+        const closeBtn = document.querySelector(".close");
+
+        openBtn.addEventListener("click", () => {
+            modal.style.display = "block";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        document.getElementById("quiz-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const answers = {
+                q1: "b",
+                q2: "b"
+            };
+
+            let score = 0;
+            for (let q in answers) {
+                const selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers[q]) score++;
+            }
+
+            const result = document.getElementById("quiz-result");
+            result.textContent = `Du fick ${score} av ${Object.keys(answers).length} rätt!`;
+        });
+
+
+
+/* The following belongs to the konstverk1.html, konstverk2.html, konstverk3.html, konstverk4.html, konstverk5.html, and konstverk6.html. */
+
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
+    const imageCounter = document.getElementById("image-counter");
+    const imageCaption = document.getElementById("image-caption");
+
+    function updateImage() {
+        slideshowImage.src = images[currentIndex].src;
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+        const caption = images[currentIndex].caption;
+        imageCaption.textContent = caption;
+        imageCaption.style.display = caption ? "block" : "none";
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    updateImage();
+
+
 
 
