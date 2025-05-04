@@ -4,8 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Konstverk nr 2</h1>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+            </a>
+        </div>
+        <nav>
+            <a href="AktuellUtställning.html">Aktuell utställning</a>
+            <a href="annan.html">På gång</a>
+            <a href="annan.html">Ta dig hit</a>
+            <a href="annan.html">Odla och äta</a>
+            <a href="annan.html">Butik</a>
+            <a href="annan.html">Arthotell</a>
+            <a href="annan.html">Om oss</a>
+        </nav>
+        <button id="language-toggle">English</button>
+    </header>
+    <div class="main-content">
+        <div class="fixed-image">
+            <div class="image-wrapper">
+                <img id="slideshow-image" src="image1.jpg" alt="Tornedalens hjärtslag">
+                <div id="image-caption" class="image-caption"></div>
+                <div id="image-counter">1/2</div>
+                <button id="prev-button">&#9664;</button>
+                <button id="next-button">&#9654;</button> 
+            </div>
+        </div>
+        <div class="scrolling-content">
+            <h1>Tornedalens hjärtslag</h1>
+            <h2>av Henrik Sjöström</h2>
+            <h3>2017</h3>
+            <p>Välkommen till "Tornedalens hjärtslag", en fängslande skulptur som fångar hjärtslaget av Tornedalen. Denna bild visar en kraftfull, stiliserad skulptur som reser sig mot himlen, och som påminner oss om den pulserande livskraften i detta landskap. Med sina runda former och stilla men uttrycksfulla rörelse, fångar verket Tornedalens natur – både dess mystik och dess beständighet. Skulpturen, som i sin enkelhet uttrycker styrkan och rytmen av landskapets andakt, påminner oss om att naturen alltid är närvarande, även i det stilla.</p>
+            <h3>Skulpturens puls</h3>
+            <p>"Tornedalens hjärtslag" är inte bara en skulptur – det är en fysisk manifestation av konstnärens känsla för naturens eviga rytm. Skulptören bakom verket, Henrik Sjöström, skapade denna skulptur för att fånga den dova pulsen som han upplevde i Tornedalen under sina många besök i området. För Henrik var det inte bara floden och bergen som var viktiga, utan själva rytmen av detta landskap – den känsla av ständig rörelse och stillhet samtidigt.<br><br>
+                Henrik har berättat att han hämtade inspiration från Tornedalens landskap och dess historier, särskilt de som rör människans förhållande till naturen och de cykler som alltid återkommer. Skulpturen, som är enkel i sin form, skulle visa på denna puls genom sin organiska design, där varje böjning och linje reflekterar naturens egen rytm.<br><br>
+                Henrik ville att verket skulle tala till betraktaren på ett mer abstrakt plan. För honom representerade skulpturen Tornedalen själv – både den fysiska världen och den inre upplevelse av att vara en del av något större än sig själv. Den fotografiska tolkningen av skulpturen fångar just detta: en visuell ekokammare av livets oavbrutna rörelse.
+            </p>
+            <p><i>Musiken som enligt Henrik själv spelades i bakgrunden när han skapade sin skulptur.</i> <br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/b7SYkaz2vmo?si=j2v9WGad7_fTmdy_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            { src: "bild2.png", caption: "" },
+            { src: "k2b2.jpg", caption: "En glimt in till Henriks arbetsplats där skapandet Tornedalens Hjärtslag ägde rum." }, 
+        ];
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
+    const imageCounter = document.getElementById("image-counter");
+    const imageCaption = document.getElementById("image-caption");
+
+    function updateImage() {
+        slideshowImage.src = images[currentIndex].src;
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+        const caption = images[currentIndex].caption;
+        imageCaption.textContent = caption;
+        imageCaption.style.display = caption ? "block" : "none";
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    updateImage();
+    </script>
+    
 </body>
 </html>
