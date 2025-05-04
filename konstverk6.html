@@ -4,8 +4,86 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Konstverk nr 6</h1>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+            </a>
+        </div>
+        <nav>
+            <a href="AktuellUtställning.html">Aktuell utställning</a>
+            <a href="annan.html">På gång</a>
+            <a href="annan.html">Ta dig hit</a>
+            <a href="annan.html">Odla och äta</a>
+            <a href="annan.html">Butik</a>
+            <a href="annan.html">Arthotell</a>
+            <a href="annan.html">Om oss</a>
+        </nav>
+        <button id="language-toggle">English</button>
+    </header>
+    <div class="main-content">
+        <div class="fixed-image">
+            <div class="image-wrapper">
+                <img id="slideshow-image" src="image1.jpg" alt="Första blomningen">
+                <div id="image-caption" class="image-caption"></div>
+                <div id="image-counter">1/3</div>
+                <button id="prev-button">&#9664;</button>
+                <button id="next-button">&#9654;</button> 
+            </div>
+        </div>
+        <div class="scrolling-content">
+            <h1>Första blomningen</h1>
+            <h2>av Elsa Bergström</h2>
+            <h3>2022</h3>
+            <p>Välkommen till "Första blomningen", en skulptur som fångar ett av livets mest symboliska ögonblick – den första blomningen. I denna skulptur, som består av tre vita blommor, ser vi naturens kraft att återfödas och förnya sig. De mjuka, organiska formerna av blommorna fångar den sårbarhet och styrka som kännetecknar vårens första tecken. Varje blomma, i sin skepnad av både elegans och ömhet, speglar livets ständiga cykler av födelse och förnyelse. De vita blommorna, som sträcker sig mot ljuset, påminner oss om hopp, om nystart och om den skönhet som kan blomstra ur det enkla.</p>
+            <h3>Livets första steg</h3>
+            <p>"Första blomningen" är en skulptur som speglar en tid av förnyelse och hopp. Den är skapad av konstnären Elsa Bergström, som inspirerades av den tidiga våren i de nordiska landskapen. Elsa minns själv hur hon som barn brukade gå genom skogarna och fälten när snön började smälta bort och de första blommorna började dyka upp ur jorden. Den känsla av tystnad och skönhet som fyllde luften när blommorna bröt fram ur det kalla jorden var något hon ville fånga i sin skulptur.<br><br>
+                För Elsa representerar dessa tre blommor inte bara själva naturens förnyelse utan också människans egna upplevelser av att stå inför nya början. De vita blommorna symboliserar det rena, det oskrivna, och det oupptäckta som finns i varje nytt kapitel av livet. Genom sin skulptur ville Elsa förmedla en känsla av ömhet och styrka på samma gång – som om varje blomma är både ömtålig och stark, precis som de första stegen i en ny resa.<br><br>
+                Elsa berättar att hon arbetade länge med att hitta de rätta formerna för blommorna – former som skulle kännas både naturliga och tidlösa. För henne var det viktigaste att skulpturen inte bara skulle vara en återgivning av blommor, utan också förmedla deras inre livskraft och dynamik. "Första blomningen" är, på många sätt, en hyllning till livets enkelhet och det ständiga flödet av förnyelse som omger oss.
+            </p>
+            <p><i>Följ med blomsterentusiasten John Feehan när han beskriver vitsippans blomning i april.</i><br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Be6l288e0hg?si=xHgmTiUsARuArPmj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+            { src: "bild6.png", caption: "" },
+            { src: "k6b2.jpg", caption: "Vitsippan - en klassisk vårblomster som ska ha inspirerat Elsa till att skapa Första blomningen." }, 
+            { src: "k6b3.jpg", caption: "Första blomningen tar form." }
+        ];
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
+    const imageCounter = document.getElementById("image-counter");
+    const imageCaption = document.getElementById("image-caption");
+
+    function updateImage() {
+        slideshowImage.src = images[currentIndex].src;
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+        const caption = images[currentIndex].caption;
+        imageCaption.textContent = caption;
+        imageCaption.style.display = caption ? "block" : "none";
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    updateImage();
+    </script>
+    
 </body>
 </html>
