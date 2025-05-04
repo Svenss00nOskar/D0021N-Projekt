@@ -104,7 +104,7 @@ nav a {
     object-fit: cover;
 }
 
-/* nedan är tillagt av katrin */
+/* Relaterat till infosidor för konstverk */
 
 .main-content {
     display: flex;
@@ -115,9 +115,10 @@ nav a {
     position: sticky;
     top: 0;
     height: 100vh;
-    width: 35%; 
+    width: 45%; 
     flex-shrink: 0;
     overflow: hidden;
+    padding-left: 40px;
 }
 
 .fixed-image img {
@@ -127,10 +128,13 @@ nav a {
 }
 
 .scrolling-content {
-    width: 65%; 
+    width: 55%;
+    max-width: 1200px; 
     padding: 20px;
     overflow-y: auto;
     text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 .image-wrapper {
@@ -142,7 +146,8 @@ nav a {
 #slideshow-image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    background-color: rgba(190, 190, 180, 0.5);
 }
 
 #image-counter {
@@ -184,6 +189,25 @@ nav a {
 #next-button:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
+
+.image-caption {
+    position: absolute;
+    bottom: 40px; 
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.image-wrapper {
+    position: relative;
+}
+
+/*Relaterat till quiz-funktionen*/
 
 .modal {
     display: none; 
@@ -249,23 +273,6 @@ nav a {
 #open-quiz-btn:hover {
     transform: translateY(-2px);
     background-color: #4e8b87;
-}
-
-.image-caption {
-    position: absolute;
-    bottom: 40px; 
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    padding: 10px;
-    font-size: 14px;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.image-wrapper {
-    position: relative;
 }
 
 /*Knappen för personlig summering*/
