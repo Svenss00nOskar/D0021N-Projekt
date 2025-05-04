@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konsthall Tornedalen</title>
     <link rel="stylesheet" href="style.css">
+<!--    <link rel="stylesheet" href="transition_slideshow2.css"> -->
+
+
+
 </head>
 <body>
-    <header>
-        <div class="logo">
+
+    <header class="gB">
+        <div class="logo gB">
             <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
         </div>
-        <nav>
+        <nav class="gB">
             <a href="AktuellUtställning.html">Aktuell utställning</a>
             <a href="annan.html">På gång</a>
             <a href="annan.html">Ta dig hit</a>
@@ -23,27 +28,45 @@
         <button id="language-toggle">English</button>
     </header>
 
-    <section class="slideshow">
-        <img id="slide-image" src="renar.jpg" alt="Bildspel">
+
+<div id="slideshowBox" class="gB">
+  <div class="slideWithCaptionBox gB">
+    <img src="solnedgang.avif" alt="Solnedgång">
+    <div class="caption gB">Verk av fiktiva Eva-Johanna Grums från Luleå</div>
+  </div>
+  <div class="slideWithCaptionBox gB">
+    <img src="gobelang.jpg" alt="Gobeläng">
+    <div class="caption gB">Verk av fiktiva Lisa Persson från Boden</div>
+  </div>
+  <div class="slideWithCaptionBox active gB">
+    <img src="renar.jpg" alt="Renar">
+    <div class="caption gB">Verk av fiktiva Jan-Per Findal från Stora Fjällträsk</div>
+  </div>
+  <span id="slideshowTooltip">Bildspelet pausar när markören är på bilden. Klicka för att stänga av (oberoende av var markören finns). Klicka igen för att starta.</span>
+</div>
+
+
+
+
+    <section class="welcomeTextBox gB">
+        <p>Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten.	Vi tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit.</p>
+
+        <p>Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar av vår utställning du vill ta del av eller kanske fördjupa dig i.</p>
+
+        <p>Barn välkomna!</p>
+
     </section>
 
-<!--
-    <section class="link-section">
-		<a href="annan.html" class="about-link">Om oss</a>
-    </section>
--->
-
-    <section class="text-section">
-        <p>
-        Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten.	Vi tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit.</p>
-
-		<p>Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar av vår utställning du vill ta del av eller kanske fördjupa dig i.</p>
-
-		<p>Barn välkomna!</p>
 
 
-    </section>
-
+    <!--
+    Placed AFTER the HTML content in order to resolve which in Mozilla Firefox is described as follows: "Uncaught
+    TypeError: [some object] is null". May show as a warning: "Layouten tvingades innan sidan laddades fullständigt.
+    Om stilmallen inte har laddats ännu kan det orsaka en blixt av ostylat innehåll." / "The layout was forced before
+    the page was fully loaded. If the stylesheet has not yet loaded, this may cause a flash of unstyled content."
+    -->
     <script src="script.js"></script>
 </body>
 </html>
+
+

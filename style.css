@@ -1,9 +1,21 @@
+/* To see these borders of the "gB" class during development, "turn on" by removing the comment tags around it. */
+
+/*
+div.gB {outline: 1px solid tomato;}
+header.gB {outline: 1px solid cyan;}
+section.gB {outline: 1px solid royalblue;}
+*/
+
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: grid;
-    padding: 0 15px 15px 15px;
+  color: black;     /* set to #333 by ChatGPT */
+  display: grid;  
+  font-family: Arial, sans-serif;
+  font-size: 15px;  /* set by ChatGPT */
+  margin: 0;
+  padding: 0 15px 15px 15px;
 }
+
 
 header {
     display: flex;
@@ -13,9 +25,11 @@ header {
     flex-wrap: wrap;
 }
 
+
 .logo img {
     height: 70px;
 }
+
 
 nav {
     display: flex;
@@ -25,67 +39,115 @@ nav {
     align-items: center;
 }
 
+
 nav a {
     text-align: center;
     flex:1;
     text-decoration: none;
-    color: #333;
+    color: black; /* needs to be set here since it's links; originally #333 by ChatGPT */
     margin: 5px;
-    font-size: 15px;
 }
+
 
 #language-toggle {
     padding: 5px 10px;
-    font-size: 15px;
-}
-
-.slideshow {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    margin-top: 10px;
-}
-
-.slideshow img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-/*
-.link-section {
-    text-align: center;
-    margin: 15px 0;
-}
-
-.about-link {
-    text-decoration: none;
-    color: #007BFF;
-    font-weight: bold;
-}
-*/
-
-/* av Håkan */
-.om-oss-section {
-    font-weight: bold;
-    margin: 35px 0 15px 0;  
-    text-align: center;
 }
 
 
-.text-section {
-    padding: 0 15px;
-    font-size: 15px;
-    color: #333;
+#slideshowBox {
+  cursor: pointer;
+  margin: auto;        /* horizontally centers slideWithCaptionBox */
+  position: relative;  /* for the tool tip's vertical positioning  */
 }
+
+
+#slideshowBox #slideshowTooltip {
+  background-color: black;
+  color: #fff;
+  border-radius: 6px;
+  padding: 5px 3px;    /* vertical horizontal */
+  position: absolute;  /* allows positioning the tooltip with z-index */
+  text-align: center;  /* horizontally centers the text in the tooltip */
+  visibility: hidden;
+  width: 170px;
+  z-index: 1;  
+
+  /* "left", "top" and "translate" horizontally centers images tooltip despite the use of "position: absolute" */
+  left: 50%;             /* moves the element's left edge to the center          */
+  top: 50%;              /* moves the element's top edge to the center           */
+  translate: -50% -50%;  /* moves the element back half its own width and height */
+}
+
+
+#slideshowBox:hover #slideshowTooltip {
+  visibility: visible;
+}
+
+
+.slideWithCaptionBox {
+  opacity: 0;
+  position: absolute;  /* displays all images at the same location */
+
+  /* ADJUST TIMING HERE! (duration of opacity change in seconds); not longer duration than set in the JavaScript! */
+  transition: opacity 1.5s ease;
+
+  /* "left" and "translate" horizontally centers images (of various sizes) despite the use of "position: absolute" */
+  left: 50%;          /* moves the element's left edge to the center */
+  translate: -50% 0;  /* moves the element back half its own width   */
+}
+
+
+.slideWithCaptionBox.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+
+.slideWithCaptionBox img {
+  border-radius: 10px;
+  display: flex;  /* gets rid of a few pixels space below each image */
+  height: 500px;
+}
+
+
+.caption {
+//  font-style: italic;
+  font-size: 13px;
+  padding: 8px;
+}
+
+
+/* Dessa "@media" EJ UNDERSÖKTA! Tips givet av ChatGPT. */
+
+/* Mobilanpassning */
+@media (max-width: 600px) {
+  .caption {
+    font-size: 0.95em;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 400px) {
+  .caption {
+    font-size: 0.85em;
+    padding: 6px;
+  }
+}
+
+
+.welcomeTextBox {
+  margin-top: 25px;
+  padding: 0 15px;
+}
+
 
 .text-align-center{
     text-align: center;
 }
 
-/*Relaterat till bilder på aktuell utställning-sidan*/
+/* Relaterat till bilder på aktuell utställning-sidan */
 
-#clickableImages{
+#clickableImages {
     display: grid;
     grid-template-columns: 1fr  1fr 1fr;
     padding-right: 40px;
