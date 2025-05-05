@@ -65,6 +65,34 @@
             { src: "k4b2.jpg", caption: "Emilie Lindholm fångade den mystiska stämningen av midnattssolen genom att uppleva dess ljus på plats. Här föddes inspirationen för 'Midnattssolen'." },
             { src: "k4b3.jpg", caption: "En bild på Emilies skissbok där de första idéerna för Midnattssolen tar form" }
         ];
+
+    let currentIndex = 0;
+
+    const slideshowImage = document.getElementById("slideshow-image");
+    const nextButton = document.getElementById("next-button");
+    const prevButton = document.getElementById("prev-button");
+    const imageCounter = document.getElementById("image-counter");
+    const imageCaption = document.getElementById("image-caption");
+
+    function updateImage() {
+        slideshowImage.src = images[currentIndex].src;
+        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+        const caption = images[currentIndex].caption;
+        imageCaption.textContent = caption;
+        imageCaption.style.display = caption ? "block" : "none";
+    }
+
+    nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateImage();
+    });
+
+    prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateImage();
+    });
+
+    updateImage();
     </script>
 </body>
 </html>

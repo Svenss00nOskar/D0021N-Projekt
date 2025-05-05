@@ -151,7 +151,7 @@ startSlideshow();
 
 
 /* The following belongs to the AktuellUtställning.html. */
-
+/*
         const modal = document.getElementById("quiz-modal");
         const openBtn = document.getElementById("open-quiz-btn");
         const closeBtn = document.querySelector(".close");
@@ -188,10 +188,10 @@ startSlideshow();
             result.textContent = `Du fick ${score} av ${Object.keys(answers).length} rätt!`;
         });
 
-
+*/
 
 /* The following belongs to the konstverk1.html, konstverk2.html, konstverk3.html, konstverk4.html, konstverk5.html, and konstverk6.html. */
-
+/*
     let currentIndex = 0;
 
     const slideshowImage = document.getElementById("slideshow-image");
@@ -219,7 +219,7 @@ startSlideshow();
     });
 
     updateImage();
-
+*/
 
 
 
