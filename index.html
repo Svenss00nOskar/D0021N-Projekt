@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konsthall Tornedalen</title>
     <link rel="stylesheet" href="style.css">
-<!--    <link rel="stylesheet" href="transition_slideshow2.css"> -->
 
-
-
+    <!--
+    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
+    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
+    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
+    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
+    not yet loaded, this may cause a flash of unstyled content."
+    -->
+    <script src="script.js" defer></script>
 </head>
 <body>
-
     <header class="gB">
         <div class="logo gB">
             <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
@@ -27,7 +31,6 @@
         </nav>
         <button id="language-toggle">English</button>
     </header>
-
 
 <div id="slideshowBox" class="gB">
   <div class="slideWithCaptionBox gB">
@@ -52,14 +55,6 @@
 
         <p data-sv="Barn välkomna!" data-en="Children welcome!">Barn välkomna!</p>
     </section>
-
-    <!--
-    Placed AFTER the HTML content in order to resolve which in Mozilla Firefox is described as follows: "Uncaught
-    TypeError: [some object] is null". May show as a warning: "Layouten tvingades innan sidan laddades fullständigt.
-    Om stilmallen inte har laddats ännu kan det orsaka en blixt av ostylat innehåll." / "The layout was forced before
-    the page was fully loaded. If the stylesheet has not yet loaded, this may cause a flash of unstyled content."
-    -->
-    <script src="script.js"></script>
 </body>
 </html>
 

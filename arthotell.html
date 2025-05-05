@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konsthall Tornedalen</title>
     <link rel="stylesheet" href="style.css">
+
+    <!--
+    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
+    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
+    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
+    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
+    not yet loaded, this may cause a flash of unstyled content."
+    -->
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="gB">
@@ -24,14 +33,6 @@
     </header>
 
     <p class="emptyPageTxt gB" data-sv="Arthotell" data-en="Arthotell">Arthotell</p>
-
-    <!--
-    Placed AFTER the HTML content in order to resolve which in Mozilla Firefox is described as follows: "Uncaught
-    TypeError: [some object] is null". May show as a warning: "Layouten tvingades innan sidan laddades fullständigt.
-    Om stilmallen inte har laddats ännu kan det orsaka en blixt av ostylat innehåll." / "The layout was forced before
-    the page was fully loaded. If the stylesheet has not yet loaded, this may cause a flash of unstyled content."
-    -->
-    <script src="script.js"></script>
 </body>
 </html>
 

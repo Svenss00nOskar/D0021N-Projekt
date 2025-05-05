@@ -4,6 +4,8 @@
 
 /* The following belongs to the language button (språkknappen) and translation in the navigational menu. */
 
+
+/*
 function updateLanguage(lang) {
   document.querySelectorAll("[data-sv][data-en]").forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
@@ -25,6 +27,45 @@ document.getElementById("language-toggle").addEventListener("click", () => {
   localStorage.setItem("language", currentLanguage);
   updateLanguage(currentLanguage);
 });
+*/
+
+
+
+
+
+function updateLanguage(lang) {
+  document.querySelectorAll("[data-sv][data-en]").forEach(el => {
+    const text = el.getAttribute(`data-${lang}`);
+    if (text) el.textContent = text;
+  });
+
+  const toggleButton = document.getElementById("language-toggle");
+  if (toggleButton) {
+    toggleButton.textContent = lang === "sv" ? "English" : "Svenska";
+  }
+}
+
+function initLanguageToggle() {
+  // Läs språkinställning från localStorage eller default till svenska
+  let currentLanguage = localStorage.getItem("language") || "sv";
+  updateLanguage(currentLanguage);
+
+  const toggleButton = document.getElementById("language-toggle");
+  if (toggleButton) {
+    toggleButton.addEventListener("click", () => {
+      currentLanguage = currentLanguage === "sv" ? "en" : "sv";
+      localStorage.setItem("language", currentLanguage);
+      updateLanguage(currentLanguage);
+    });
+  }
+}
+
+window.addEventListener("DOMContentLoaded", initLanguageToggle);
+
+
+
+
+
 
 
 
