@@ -10,6 +10,10 @@
     <body>
         <button onclick="location.href='AktuellUtställning.html'">TIllbaks till Aktuell Utställning</button>
 
+        <br><br>
+
+        <h2>Du hittar en lista på de sidor/konstverk du besökt här nedan:</h2>
+
         <ul id="summary"></ul>
 
         <script>
@@ -21,6 +25,10 @@
                 list.appendChild(li);
             });
         </script>
+
+        <br><br>
+
+        <p>Summeringen sparas endast lokalt via din webbläsare. Om du önskar att ta bort den, klicka på "Clear Tracking".</p>
 
         <button class="clearTrackingButton" onclick="localStorage.removeItem('visitedPages'); location.reload();">Clear tracking</button>
 
