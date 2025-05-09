@@ -20,7 +20,7 @@
         <div class="logo gB">
             <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
         </div>
-        <nav class="gB">
+        <nav class="gB nav-links">
             <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
@@ -28,11 +28,15 @@
             <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
             <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
             <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
+            <button id="language-toggle">English</button>
+            <a id="extra"></a>
         </nav>
-        <button id="language-toggle">English</button>
+        <button class="hamburger" aria-label="Toggle navigation">
+          ☰
+        </button>
     </header>
 
-<div id="slideshowBox" class="gB">
+<div id="slideshowBox" class="gB text-align-center">
   <div class="slideWithCaptionBox gB">
     <img src="solnedgang.avif" alt="Solnedgång" data-sv="Solnedgång" data-en="Sunset">
     <div class="caption gB" data-sv="Verk av fiktiva Eva-Johanna Grums från Luleå" data-en="Work by fictional Eva-Johanna Grums from Luleå">Verk av fiktiva Eva-Johanna Grums från Luleå</div>
@@ -48,13 +52,14 @@
   <span id="slideshowTooltip">Bildspelet pausar när markören är på bilden. Klicka för att stänga av (oberoende av var markören finns). Klicka igen för att starta.</span>
 </div>
 
-    <section class="welcomeTextBox gB">
+    <section class="welcomeTextBox gB text-align-center">
         <p data-sv="Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten.	Vi tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit." data-en="A warm welcome to Konsthall Tornedalen! It is a place for art, nature and culture in the heart of Norrbotten. We will take you on an audiovisual art experience in a mountain environment if you take the step and travel here.">Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten.	Vi tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit.</p>
 
         <p data-sv="Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar av vår utställning du vill ta del av eller kanske fördjupa dig i." data-en="With a mobile phone or tablet (which you can bring yourself or borrow on site in our cozy welcome room adjacent to the exhibition hall), you can choose at your own pace and according to your own taste which parts of our exhibition you want to take part in or perhaps delve into.">Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar av vår utställning du vill ta del av eller kanske fördjupa dig i.</p>
 
         <p data-sv="Barn välkomna!" data-en="Children welcome!">Barn välkomna!</p>
     </section>
+    <script src="hamburger-menu.js"></script>
 </body>
 </html>
 

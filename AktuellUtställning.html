@@ -22,7 +22,7 @@
                 <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
             </a>
         </div>
-        <nav>
+        <nav class="nav-links">
             <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
@@ -30,8 +30,12 @@
             <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
             <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
             <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
+            <button id="language-toggle">English</button>
+            <a id="extra"></a>
         </nav>
-        <button id="language-toggle">English</button>
+        <button class="hamburger" aria-label="Toggle navigation">
+            ☰
+        </button>
     </header>
     <main>
         <h1>Aktuell utställning: Tornedalens röster</h1>
@@ -149,6 +153,9 @@
             const result = document.getElementById("quiz-result");
             result.textContent = `Du fick ${score} av ${Object.keys(answers).length} rätt!`;
         });
+
+
      </script>
+     <script src="hamburger-menu.js"></script>
 </body>
 </html>

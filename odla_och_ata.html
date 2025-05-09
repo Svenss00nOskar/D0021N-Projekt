@@ -18,9 +18,11 @@
 <body>
     <header class="gB">
         <div class="logo gB">
-            <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+            <a href="index.html">
+                <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+            </a>
         </div>
-        <nav class="gB">
+        <nav class="gB nav-links">
             <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
@@ -28,11 +30,16 @@
             <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
             <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
             <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
+            <button id="language-toggle">English</button>
+            <a id="extra"></a>
         </nav>
-        <button id="language-toggle">English</button>
+        <button class="hamburger" aria-label="Toggle navigation">
+            ☰
+        </button>
     </header>
 
     <p class="emptyPageTxt gB" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</p>
+    <script src="hamburger-menu.js"></script>
 </body>
 </html>
 

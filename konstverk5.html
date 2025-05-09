@@ -22,7 +22,7 @@
                 <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
             </a>
         </div>
-        <nav>
+        <nav class="nav-links">
             <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
@@ -30,8 +30,12 @@
             <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
             <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
             <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
+            <button id="language-toggle">English</button>
+            <a id="extra"></a>
         </nav>
-        <button id="language-toggle">English</button>
+        <button class="hamburger" aria-label="Toggle navigation">
+            ☰
+        </button>
     </header>
     <div class="main-content">
         <div class="fixed-image">
@@ -57,6 +61,11 @@
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/Aj17Xsjt4sc?si=nvzbFBzpHVnxVYyi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </div>
+    </div>
+    <div class="text-align-center summary-btn-div">
+        <button class="summary-btn">📝
+            <span class="btn-text">Tryck här för en personlig summering av ditt besök</span>
+        </button>
     </div>
 
     <script>
@@ -93,5 +102,6 @@
 
     updateImage();
     </script>
+    <script src="hamburger-menu.js"></script>
 </body>
 </html>

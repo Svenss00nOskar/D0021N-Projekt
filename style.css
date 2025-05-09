@@ -8,6 +8,350 @@ section.gB {outline: 1px solid royalblue;}
 p.gB {outline: 1px solid lightgreen;}
 */
 
+/* Relaterat till bilder på aktuell utställning-sidan */
+
+#clickableImages {
+  display: grid;
+  a {
+      text-decoration: none;
+      color: black;
+  }
+  img {
+      width: 200px;
+      height: 150px;
+      border-radius: 5%;
+  }
+}
+
+.crop-box img {
+  object-fit: cover;
+}
+
+
+/* Mobiler (upp till 599px) */
+@media (max-width: 600px) {
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  header {
+    position: sticky;
+    top:0;
+    z-index: 1000;
+    display: flex;
+  }
+
+
+  nav {
+    display: none;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  width: 100%;
+  height: 100vh; 
+}
+
+.nav-links.active {
+  display: flex;
+  font-size: large;
+}
+
+#language-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  padding-bottom: 100px;
+}
+
+
+  #clickableImages {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scrolling-content {
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  #slideshow-image {
+    max-width: 300px;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    background-color: rgba(190, 190, 180, 0.5);
+  }
+
+  .slideWithCaptionBox img {
+    border-radius: 10px;
+    display: flex;  /* gets rid of a few pixels space below each image */
+    height: 200px;
+    width: 200px;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+
+}
+
+/* Surfplattor stående (600px till 899px) */
+@media (min-width: 600px) and (max-width: 900px) {
+
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+}
+
+header {
+  position: sticky;
+  top:0;
+  z-index: 1000;
+  display: flex;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  background-color: white;
+  width: 100%;
+  height: 100vh; 
+}
+
+.nav-links.active {
+  display: flex;
+  font-size: large;
+  padding-bottom: 50px;
+}
+
+#language-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  padding-bottom: 100px;
+} 
+
+  #clickableImages {
+    grid-template-columns: 1fr 1fr;
+
+    img {
+      width: 200px;
+      height: 150px;
+      border-radius: 5%;
+  }
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scrolling-content {
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  #slideshow-image {
+    max-width: 850px;
+    width:500px;
+    height: 500px;
+    object-fit: contain;
+    background-color: rgba(190, 190, 180, 0.5);
+}
+
+.slideWithCaptionBox img {
+  border-radius: 10px;
+  display: flex;  /* gets rid of a few pixels space below each image */
+  height: 200px;
+  width: 200px;
+}
+
+
+ iframe {
+  width: 500px;
+ }
+
+}
+
+/* Surfplattor liggande, små laptops (900px till 1199px) */
+@media (min-width: 900px) and (max-width: 1200px) {
+
+.hamburger {
+  display: none;
+}  
+
+  
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 10px;
+  flex: 1;
+  align-items: center;
+}
+
+#extra {
+  display:none;
+}
+  
+  #clickableImages {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .fixed-image {
+    position:sticky;
+    top: 0;
+    height: 100vh;
+    width: 45%; 
+    flex-shrink: 0;
+    overflow: hidden;
+    padding-left: 40px;
+}
+
+.scrolling-content {
+  width: 55%;
+  max-width: 1200px; 
+  padding: 20px;
+  overflow-y: auto;
+  text-align: center;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+#slideshow-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: rgba(190, 190, 180, 0.5);
+}
+
+.slideWithCaptionBox img {
+  border-radius: 10px;
+  display: flex;  /* gets rid of a few pixels space below each image */
+  height: 250px;
+}
+
+#language-toggle {
+  padding: 5px 10px;
+  width: 74px;
+}
+
+iframe {
+  max-width: 100%;
+
+}
+
+}
+
+/*Datorer och stora skärmar (1200px och uppåt)*/
+@media (min-width: 1200px) {
+
+  .hamburger {
+    display: none;
+  }  
+  
+    
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 10px;
+    flex: 1;
+    align-items: center;
+  }
+  
+  #extra {
+    display:none;
+  }
+    
+    #clickableImages {
+      grid-template-columns: 1fr 1fr 1fr;
+      img {
+        width: 300px;
+        height: 250px;
+        border-radius: 5%;
+    }
+    }
+  
+    .fixed-image {
+      position:sticky;
+      top: 0;
+      height: 100vh;
+      width: 45%; 
+      flex-shrink: 0;
+      overflow: hidden;
+      padding-left: 40px;
+  }
+  
+  .scrolling-content {
+    width: 55%;
+    max-width: 1200px; 
+    padding: 20px;
+    overflow-y: auto;
+    text-align: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  
+  #slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: rgba(190, 190, 180, 0.5);
+  }
+  
+  .slideWithCaptionBox img {
+    border-radius: 10px;
+    display: flex;  /* gets rid of a few pixels space below each image */
+    height: 300px;
+  }
+  
+  #language-toggle {
+    padding: 5px 10px;
+    width: 74px;
+  }
+  
+  iframe {
+    max-width: 100%;
+  
+  }
+
+}
+
+
 
 body {
   color: black;     /* set to #333 by ChatGPT */
@@ -33,27 +377,12 @@ header {
 }
 
 
-nav {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-left: 10px;
-    flex: 1;
-    align-items: center;
-}
-
-
 nav a {
     text-align: center;
     flex: 1;
     text-decoration: none;
     color: black; /* needs to be set here since it's links; originally #333 by ChatGPT */
-    margin: 5px;
-}
 
-
-#language-toggle {
-    padding: 5px 10px;
-    width: 74px;
 }
 
 
@@ -113,13 +442,6 @@ nav a {
 }
 
 
-.slideWithCaptionBox img {
-  border-radius: 10px;
-  display: flex;  /* gets rid of a few pixels space below each image */
-  height: 500px;
-}
-
-
 .caption {
 //  font-style: italic;
   font-size: 13px;
@@ -155,42 +477,11 @@ nav a {
     text-align: center;
 }
 
-/* Relaterat till bilder på aktuell utställning-sidan */
-
-#clickableImages {
-    display: grid;
-    grid-template-columns: 1fr  1fr 1fr;
-    padding-right: 40px;
-    a {
-        text-decoration: none;
-        color: black;
-    }
-    img {
-        width: 300px;
-        height: 230px;
-        border-radius: 5%;
-    }
-}
-
-.crop-box img {
-    object-fit: cover;
-}
-
 /* Relaterat till infosidor för konstverk */
 
 .main-content {
     display: flex;
     margin-top: 20px;
-}
-
-.fixed-image {
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    width: 45%; 
-    flex-shrink: 0;
-    overflow: hidden;
-    padding-left: 40px;
 }
 
 .fixed-image img {
@@ -199,27 +490,11 @@ nav a {
     object-fit: cover;
 }
 
-.scrolling-content {
-    width: 55%;
-    max-width: 1200px; 
-    padding: 20px;
-    overflow-y: auto;
-    text-align: center;
-    padding-left: 40px;
-    padding-right: 40px;
-}
 
 .image-wrapper {
     position: relative;
     height: 100%;
     width: 100%;
-}
-
-#slideshow-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    background-color: rgba(190, 190, 180, 0.5);
 }
 
 #image-counter {
@@ -347,44 +622,47 @@ nav a {
     background-color: #4e8b87;
 }
 
-/*Knappen för personlig summering*/
+
+/*Personlig summering-knappen*/
+
 .summary-btn {
-    height: 48px;
-    background-color: #747373;
-    border: none;
-    box-shadow: 5px 3px 7px  #000000;
-    padding: 8px 12px;
-    font-size: 18px;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000; 
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 25px;
+  height: 60px;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 12px;
+  padding-left: 24px;
+  padding-right: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 5px 3px 7px  #000000;
+  animation: pulse 2s infinite;
+}
+
+.summary-btn:hover {
+  background-color: #4e8b87;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(232, 47, 47);
   }
-  
-  .summary-btn .btn-text {
-    opacity: 0;
-    transform: scale(0.8);
-    white-space: nowrap;
-    transition: all 0.3s ease;
-    overflow: hidden;
-    max-width: 0;
+  70% {
+    box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
   }
-  
-  .summary-btn:hover {
-    font-size: 20px;
-    background-color: #747373;
-    color: #fff;
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
   }
-  
-  .summary-btn:hover .btn-text {
-    opacity: 1;
-    transform: scale(1);
-    max-width: 500px;
-  }
+}
+
+.summary-btn-div {
+  padding-top: 50px;
+}
+
 
   
