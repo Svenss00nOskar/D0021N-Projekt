@@ -121,7 +121,7 @@ nav a {
 
 
 .caption {
-//  font-style: italic;
+  font-style: italic;
   font-size: 13px;
   padding: 8px;
 }
@@ -388,3 +388,16 @@ nav a {
   }
 
   
+/* Lite css för personliga summeringen */
+#summary {
+  list-style-type: disc;
+  padding-left: 1.5em;
+}
+
+#summary li {
+  margin-bottom: 0.5em;
+}
+
+.clearTrackingButton {
+  width: 100px;
+}
