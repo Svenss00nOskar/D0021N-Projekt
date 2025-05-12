@@ -52,6 +52,7 @@
             <h1>Midnattssolen</h1>
             <h2>av Emilie Lindholm</h2>
             <h3>1998</h3>
+            <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
             <p>Välkommen till "Midnattssolen", en målning som fångar ett ögonblick när naturens magi och mysterium möts vid den evigt ljusa midnattssolen. I denna bild står en röd räv, frimodig och vaksam, i ett fält som badar i det mjuka, gyllene ljuset från midnattssolen. Solens värme strålar genom landskapet, men dess ljus är unikt – det är det där sällsynta ljuset som inte riktigt försvinner, som sveper in världen i en drömsk och magisk atmosfär. Räven, med sina klara ögon och försiktiga hållning, verkar vara både en del av denna tysta natt och en främling i den.</p>
             <h3>Räven och solens hemlighet</h3>
             <p>"Midnattssolen" är en målning som växte fram under många av konstnären Emilie Lindholms nattliga vandringar i de norrländska fälten. För Emilie var midnattssolen inte bara ett fenomen i naturen, utan ett symboliskt ljus – ett ljus som både belyser och fördunklar. En natt, när hon var ute och vandrade vid solens zenit, stötte hon på en ensam röd räv som stod stilla i ett fält. Räven, med sitt rödaktiga pälsverk, verkade vara upplyst från alla håll av solens gyllene strålar, men samtidigt var skuggorna från fältets gräs så långsträckta och mystiska.<br><br>
@@ -104,6 +105,29 @@
 
     updateImage();
     </script>
+
+    <script>
+    const artworkData = {
+        title: "Midnattssolen",
+        artist: "Emilie Lindholm",
+        year: "1998",
+        image: "bild4.png"
+    };
+    
+    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        
+        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+        if (!alreadyExists) {
+            favorites.push(artworkData);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            alert("Konstverket har lagts till i dina favoriter!");
+        } else {
+            alert("Detta konstverk finns redan i dina favoriter.");
+        }
+    });
+    </script>
+    
     <script src="hamburger-menu.js"></script>
 </body>
 </html>
