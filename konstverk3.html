@@ -52,6 +52,7 @@
             <h1>Isälvens viskning</h1>
             <h2>av Alice Forslund</h2>
             <h3>2004</h3>
+            <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
             <p>Välkommen till "Isälvens viskning", en målning som fångar en av naturens mest tysta och mystiska röster – den viskande isälven. I denna bild ser vi isens kalla, reflekterande yta som bär på historier om tider som varit och de krafter som har format landskapet. Genom målningens lugna och mjuka färgskala förmedlas en känsla av frid, men också av en hemlig kraft som ligger latent i varje isflak. Isälven, som en gång var en livskraftig flod under forntida tider, talar till oss genom sina tysta rörelser och ger oss en glimt av en tid för länge sedan.</p>
             <h3>En viskning från forntiden</h3>
             <p>"Isälvens viskning" är resultatet av en intensiv period av introspektion för konstnären, Alice Forslund. Under sina många resor till norra Sverige hade Alice alltid fascinerats av de uråldriga landskapen som formats av is och tid. En särskild plats vid en av de gamla isälvarna fångade hennes intresse – en plats där isen, trots sin stillhet, nästan tycktes viska sina hemligheter till de som lyssnade noga.<br><br>
@@ -104,6 +105,29 @@
 
     updateImage();
     </script>
+
+    <script>
+    const artworkData = {
+        title: "Isälvens viskning",
+        artist: "Alice Forslund",
+        year: "2004",
+        image: "bild3.png"
+    };
+    
+    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        
+        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+        if (!alreadyExists) {
+            favorites.push(artworkData);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            alert("Konstverket har lagts till i dina favoriter!");
+        } else {
+            alert("Detta konstverk finns redan i dina favoriter.");
+        }
+    });
+    </script>
+    
     <script src="hamburger-menu.js"></script>
 </body>
 </html>
