@@ -52,6 +52,7 @@
             <h1>Väktare i skogen</h1>
             <h2>av Viktor Persson</h2>
             <h3>2014</h3>
+            <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
             <p>Välkommen till "Väktare i skogen", en målning som fångar den majestätiska och mystiska närvaron av naturens hemliga beskyddare. I den kalla vinterdogen sitter en uggla stilla på en trädgren, med sina kloka ögon som blickar ut över den snötäckta skogen. Den tysta, vintriga skogen, där varje träd och varje snöflinga verkar bära på ett visst lugn, omges av ugglans tysta vakt. Genom denna målning förmedlas en känsla av både stillhet och vaksamhet – som om skogen själv är levande och skyddas av dess tysta väktare.</p>
             <h3>Väktaren i vinternatten</h3>
             <p>"Väktare i skogen" är resultatet av konstnären Viktor Perssons djupa fascination för nattens mysterier och vinterlandskapens stillhet. Under en vinternatt i de norrländska skogarna, när snön låg tung och tyst på träden, stötte Viktor på en uggla som satt orörlig på en gren. Ugglan, med sina stora, kloka ögon, verkade vaka över skogen, som om den var en tyst beskyddare av de levande varelserna och av den tysta vinternatten.<br><br>
@@ -103,6 +104,29 @@
 
     updateImage();
     </script>
+
+    <script>
+    const artworkData = {
+        title: "Väktare i skogen",
+        artist: "Viktor Persson",
+        year: "2014",
+        image: "bild5.jpeg"
+    };
+    
+    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        
+        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+        if (!alreadyExists) {
+            favorites.push(artworkData);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            alert("Konstverket har lagts till i dina favoriter!");
+        } else {
+            alert("Detta konstverk finns redan i dina favoriter.");
+        }
+    });
+    </script>
+    
     <script src="hamburger-menu.js"></script>
 </body>
 </html>
