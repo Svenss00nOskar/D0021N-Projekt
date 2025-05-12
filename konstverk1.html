@@ -52,6 +52,7 @@
             <h1>Renarnas färd</h1>
             <h2>av Elin Norrström</h2>
             <h3>1982</h3>
+            <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
             <p>Välkommen till "Renarnas färd", en målning som fångar ett kraftfullt och levande ögonblick i naturen. Här ser vi en grupp renar rusa genom en våt skog, där vatten stänker upp från marken i varje språng. Den tunga, fuktiga luften och den genomdränkta terrängen förmedlar en intensiv känsla av rörelse, energi och samspel med elementen. Varje vattenstänk, varje regndroppe som vilar på grenarna, blir en del av renarnas färd – en resa genom ett landskap i ständig förvandling. Målningen är en hyllning till djurens urkraft och till det vilda, oförutsägbara i den nordiska naturen.</p>
             <h3>Den okända konstnären</h3>
             <p>Det sägs att "Renarnas färd" är resultatet av en tillfällig vision som uppstod för många år sedan. Konstnären bakom verket, som går under namnet Elin Norrström, var en ensam vandrande själ som ofta utforskade de norrländska skogarna i jakten på inspiration. En tidig morgon, när dimman låg tjock över marken och regnet sakta duggade ner, såg Elin en flock renar komma fram ur dimman. De sprang snabbt genom den våta marken, deras rörelser mjuka men bestämda.<br><br>
@@ -106,6 +107,29 @@
 
     updateImage();
     </script>
+    
+    <script>
+    const artworkData = {
+        title: "Renarnas Färd",
+        artist: "Elin Norrström",
+        year: "1982",
+        image: "bild1.jpeg"
+    };
+    
+    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        
+        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+        if (!alreadyExists) {
+            favorites.push(artworkData);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            alert("Konstverket har lagts till i dina favoriter!");
+        } else {
+            alert("Detta konstverk finns redan i dina favoriter.");
+        }
+    });
+    </script>
+    
     <script src="hamburger-menu.js"></script>
 </body>
 </html>
