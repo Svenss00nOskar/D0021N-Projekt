@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Besökssummering</title>
-    <link rel="stylesheet" href="style.css">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Besökssummering</title>
 
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
-    <script src="script.js" defer></script>
-    <script src="summary.js"></script>
-</head>
-<body>
-    <header class="gB">
-        <div class="logo gB">
-            <a href="index.html">
-                <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
-            </a>
-        </div>
-        <nav class="gB nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
-            <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
-            <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
-            <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
-            <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
-            <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
-            <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
+        <script src="summary.js"></script>
+        
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+                </a>
+            </div>
+            <nav>
+                <a href="AktuellUtställning.html">Aktuell utställning</a>
+                <a href="annan.html">På gång</a>
+                <a href="annan.html">Ta dig hit</a>
+                <a href="annan.html">Odla och äta</a>
+                <a href="annan.html">Butik</a>
+                <a href="annan.html">Arthotell</a>
+                <a href="annan.html">Om oss</a>
+            </nav>
             <button id="language-toggle">English</button>
-            <a id="extra"></a>
-        </nav>
-        <button class="hamburger" aria-label="Toggle navigation">
-            ☰
-        </button>
-    </header>
+        </header>
 
-
-<!-- START OF MORE PAGE-SPECIFIC STUFF BY OSKAR (Håkan moved JavaScript to <head> section) -->
         <br><br>
 
-        <h2>Du hittar en lista på de sidor/konstverk du besökt här nedan:</h2>
+        <main class="summary-wrapper">
+            <section class="visited-section">
+                <h2>Besökta sidor/konstverk</h2>
+                <ul id="summary" class="visited-list"></ul>
+                <p class="local-note">Summeringen sparas endast lokalt i din webbläsare. Klicka nedan för att rensa:</p>
+                <button class="clearTrackingButton" onclick="localStorage.removeItem('visitedPages'); location.reload();">Rensa besök</button>
+            </section>
+        
+            <section class="favorites-section">
+                <h2>Favoritkonstverk</h2>
+                <div id="summary-container" class="favorites-container"></div>
+                <button class="clearTrackingButton" onclick="clearFavorites()">Rensa favoriter</button>
+            </section>
+        </main>
 
-        <ul id="summary"></ul>
+        <section class="reflections-section">
+            <h2>Dina reflektioner</h2>
+            <textarea id="reflection-input" placeholder="Skriv dina tankar om besöket här..."></textarea>
+            <button class="save-reflection-btn" onclick="saveReflection()">Spara reflektion</button>
+          </section>
 
+          <section class="upload-section">
+            <h2>Dina egna bilder</h2>
+            <input type="file" id="image-upload" accept="image/*" multiple>
+            <div id="uploaded-images-preview"></div>
+          </section>
+
+          <button class="preview-button" onclick="previewSummary()">Förhandsgranska summering</button>
+
+         
         <script>
             const summary = getVisitSummary();
             const list = document.getElementById('summary');
@@ -57,13 +69,119 @@
             });
         </script>
 
-        <br><br>
+<script>
+    function loadFavorites() {
+        const summaryContainer = document.getElementById("summary-container");
+        const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    
+        if (favorites.length === 0) {
+            summaryContainer.innerHTML = "<p>Du har ännu inte lagt till några favoritkonstverk.</p>";
+            return;
+        }
+    
+        summaryContainer.innerHTML = favorites.map(fav => `
+            <div class="favorite-artwork">
+                <img src="${fav.image}" alt="${fav.title}" style="max-width: 200px; border-radius: 8px;">
+                <h3>${fav.title}</h3>
+                <p><strong>Av:</strong> ${fav.artist} (${fav.year})</p>
+            </div>
+        `).join("");
+    }
+    
+    function clearFavorites() {
+        localStorage.removeItem("favorites");
+        loadFavorites();
+    }
+    
+    loadFavorites();
+    </script>
 
-        <p>Summeringen sparas endast lokalt via din webbläsare. Om du önskar att ta bort den, klicka på "Clear Tracking".</p>
+<script>
+    function saveReflection() {
+        const input = document.getElementById("reflection-input").value;
+        localStorage.setItem("userReflection", input);
+        alert("Reflektion sparad!");
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        const saved = localStorage.getItem("userReflection");
+        if (saved) {
+            document.getElementById("reflection-input").value = saved;
+        }
+    });
+    </script>
 
-        <button class="clearTrackingButton" onclick="localStorage.removeItem('visitedPages'); location.reload();">Clear tracking</button>
-<!-- END OF MORE PAGE-SPECIFIC STUFF BY OSKAR -->
+<script>
+const uploadedImagesPreview = document.getElementById("uploaded-images-preview");
+const imageUploadInput = document.getElementById("image-upload");
 
-    <script src="hamburger-menu.js"></script>
+function saveUploadedImages(images) {
+    localStorage.setItem("uploadedImages", JSON.stringify(images));
+}
+
+function renderUploadedImages() {
+    const images = JSON.parse(localStorage.getItem("uploadedImages")) || [];
+    uploadedImagesPreview.innerHTML = "";
+
+    images.forEach((src, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("uploaded-image-wrapper");
+        wrapper.style.position = "relative";
+        wrapper.style.display = "inline-block";
+        wrapper.style.margin = "5px";
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.style.maxHeight = "100px";
+        img.style.borderRadius = "6px";
+
+        const btn = document.createElement("button");
+        btn.classList.add("delete-image-btn");
+        btn.innerHTML = "&times;"; 
+        btn.title = "Ta bort bild";
+        btn.style.top = "2px";
+        btn.style.right = "2px";
+        btn.style.background = "rgba(0,0,0,0.5)";
+        btn.style.color = "#fff";
+        btn.style.border = "none";
+        btn.style.borderRadius = "50%";
+        btn.style.cursor = "pointer";
+        btn.style.width = "24px";
+        btn.style.height = "24px";
+        btn.onclick = () => {
+            images.splice(index, 1);
+            saveUploadedImages(images);
+            renderUploadedImages();
+        };
+
+        wrapper.appendChild(img);
+        wrapper.appendChild(btn);
+        uploadedImagesPreview.appendChild(wrapper);
+    });
+}
+
+document.addEventListener("DOMContentLoaded", renderUploadedImages);
+
+imageUploadInput.addEventListener("change", function () {
+    const files = Array.from(this.files);
+    const readerPromises = files.map(file => {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = e => resolve(e.target.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
+    });
+
+    Promise.all(readerPromises).then(newImages => {
+        const existing = JSON.parse(localStorage.getItem("uploadedImages")) || [];
+        const allImages = existing.concat(newImages);
+        saveUploadedImages(allImages);
+        renderUploadedImages();
+        imageUploadInput.value = ""; 
+    });
+});
+    </script>
+
 </body>
 </html>
