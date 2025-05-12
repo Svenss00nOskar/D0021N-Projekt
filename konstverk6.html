@@ -52,6 +52,7 @@
             <h1>Första blomningen</h1>
             <h2>av Elsa Bergström</h2>
             <h3>2022</h3>
+            <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
             <p>Välkommen till "Första blomningen", en skulptur som fångar ett av livets mest symboliska ögonblick – den första blomningen. I denna skulptur, som består av tre vita blommor, ser vi naturens kraft att återfödas och förnya sig. De mjuka, organiska formerna av blommorna fångar den sårbarhet och styrka som kännetecknar vårens första tecken. Varje blomma, i sin skepnad av både elegans och ömhet, speglar livets ständiga cykler av födelse och förnyelse. De vita blommorna, som sträcker sig mot ljuset, påminner oss om hopp, om nystart och om den skönhet som kan blomstra ur det enkla.</p>
             <h3>Livets första steg</h3>
             <p>"Första blomningen" är en skulptur som speglar en tid av förnyelse och hopp. Den är skapad av konstnären Elsa Bergström, som inspirerades av den tidiga våren i de nordiska landskapen. Elsa minns själv hur hon som barn brukade gå genom skogarna och fälten när snön började smälta bort och de första blommorna började dyka upp ur jorden. Den känsla av tystnad och skönhet som fyllde luften när blommorna bröt fram ur det kalla jorden var något hon ville fånga i sin skulptur.<br><br>
@@ -104,6 +105,29 @@
 
     updateImage();
     </script>
+
+    <script>
+    const artworkData = {
+        title: "Första blomningen",
+        artist: "Elsa Bergström",
+        year: "2022",
+        image: "bild6.png"
+    };
+    
+    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        
+        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+        if (!alreadyExists) {
+            favorites.push(artworkData);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            alert("Konstverket har lagts till i dina favoriter!");
+        } else {
+            alert("Detta konstverk finns redan i dina favoriter.");
+        }
+    });
+    </script>
+    
     <script src="hamburger-menu.js"></script>
 </body>
 </html>
