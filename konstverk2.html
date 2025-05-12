@@ -52,6 +52,7 @@
             <h1>Tornedalens hjärtslag</h1>
             <h2>av Henrik Sjöström</h2>
             <h3>2017</h3>
+            <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
             <p>Välkommen till "Tornedalens hjärtslag", en fängslande skulptur som fångar hjärtslaget av Tornedalen. Denna bild visar en kraftfull, stiliserad skulptur som reser sig mot himlen, och som påminner oss om den pulserande livskraften i detta landskap. Med sina runda former och stilla men uttrycksfulla rörelse, fångar verket Tornedalens natur – både dess mystik och dess beständighet. Skulpturen, som i sin enkelhet uttrycker styrkan och rytmen av landskapets andakt, påminner oss om att naturen alltid är närvarande, även i det stilla.</p>
             <h3>Skulpturens puls</h3>
             <p>"Tornedalens hjärtslag" är inte bara en skulptur – det är en fysisk manifestation av konstnärens känsla för naturens eviga rytm. Skulptören bakom verket, Henrik Sjöström, skapade denna skulptur för att fånga den dova pulsen som han upplevde i Tornedalen under sina många besök i området. För Henrik var det inte bara floden och bergen som var viktiga, utan själva rytmen av detta landskap – den känsla av ständig rörelse och stillhet samtidigt.<br><br>
@@ -102,6 +103,29 @@
 
     updateImage();
     </script>
+
+    <script>
+    const artworkData = {
+        title: "Tornedalens hjärtslag",
+        artist: "Henrik Sjöström",
+        year: "2017",
+        image: "bild2.png"
+    };
+    
+    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+        
+        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+        if (!alreadyExists) {
+            favorites.push(artworkData);
+            localStorage.setItem("favorites", JSON.stringify(favorites));
+            alert("Konstverket har lagts till i dina favoriter!");
+        } else {
+            alert("Detta konstverk finns redan i dina favoriter.");
+        }
+    });
+    </script>
+    
     <script src="hamburger-menu.js"></script>
 </body>
 </html>
