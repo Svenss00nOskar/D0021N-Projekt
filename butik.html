@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Konsthall Tornedalen</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
     <script src="script.js" defer></script>
+    <script src="hamburger-menu.js"></script>
 </head>
+
 <body>
-    <header class="gB">
-        <div class="logo gB">
+    <header>
+        <div class="logo">
             <a href="index.html">
                 <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
             </a>
         </div>
-        <nav class="gB nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+        <nav class="nav-links">
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+                utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
             <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
@@ -37,10 +33,7 @@
             ☰
         </button>
     </header>
-
-    <p class="emptyPageTxt gB" data-sv="Butik" data-en="Shop">Butik</p>
-    <script src="hamburger-menu.js"></script>
+    <p class="emptyPageTxt" data-sv="Butik" data-en="Shop">Butik</p>
 </body>
+
 </html>
-
-

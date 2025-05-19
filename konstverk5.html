@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Väktare i skogen</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
     <script src="script.js" defer></script>
     <script src="summary.js"></script>
+    <script src="hamburger-menu.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -24,7 +19,8 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+                utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
             <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
@@ -53,14 +49,35 @@
             <h2>av Viktor Persson</h2>
             <h3>2014</h3>
             <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
-            <p>Välkommen till "Väktare i skogen", en målning som fångar den majestätiska och mystiska närvaron av naturens hemliga beskyddare. I den kalla vinterdogen sitter en uggla stilla på en trädgren, med sina kloka ögon som blickar ut över den snötäckta skogen. Den tysta, vintriga skogen, där varje träd och varje snöflinga verkar bära på ett visst lugn, omges av ugglans tysta vakt. Genom denna målning förmedlas en känsla av både stillhet och vaksamhet – som om skogen själv är levande och skyddas av dess tysta väktare.</p>
+            <p>Välkommen till "Väktare i skogen", en målning som fångar den majestätiska och mystiska närvaron av
+                naturens hemliga beskyddare. I den kalla vinterdogen sitter en uggla stilla på en trädgren, med sina
+                kloka ögon som blickar ut över den snötäckta skogen. Den tysta, vintriga skogen, där varje träd och
+                varje snöflinga verkar bära på ett visst lugn, omges av ugglans tysta vakt. Genom denna målning
+                förmedlas en känsla av både stillhet och vaksamhet – som om skogen själv är levande och skyddas av dess
+                tysta väktare.</p>
             <h3>Väktaren i vinternatten</h3>
-            <p>"Väktare i skogen" är resultatet av konstnären Viktor Perssons djupa fascination för nattens mysterier och vinterlandskapens stillhet. Under en vinternatt i de norrländska skogarna, när snön låg tung och tyst på träden, stötte Viktor på en uggla som satt orörlig på en gren. Ugglan, med sina stora, kloka ögon, verkade vaka över skogen, som om den var en tyst beskyddare av de levande varelserna och av den tysta vinternatten.<br><br>
-                För Viktor representerade ugglan inte bara visdom och skönhet, utan också naturens egna väktare – en varelse som genom sin närvaro upprätthåller balansen i skogen. Det var just denna känsla av en natur som var både ödslig och trygg, både föränderlig och oföränderlig, som han ville fånga i "Väktare i skogen". Målningen är inte bara en skildring av en nattlig scen; den är en hyllning till den mystik och kraft som finns i de djupa skogarna och den natur som vaktar våra drömmar.<br><br>
-                Viktor har berättat att han ofta har blivit fascinerad av hur ugglor har symboliserat både visdom och mystik i olika kulturer genom historien. I denna målning ville han uttrycka det förhållande mellan människan och naturen – en relation där vi ibland är åskådare, ibland beskyddare, men alltid en del av det större systemet. Ugglan i "Väktare i skogen" är en metafor för att vi alla har en plats i den vida och gåtfulla världen.
+            <p>"Väktare i skogen" är resultatet av konstnären Viktor Perssons djupa fascination för nattens mysterier
+                och vinterlandskapens stillhet. Under en vinternatt i de norrländska skogarna, när snön låg tung och
+                tyst på träden, stötte Viktor på en uggla som satt orörlig på en gren. Ugglan, med sina stora, kloka
+                ögon, verkade vaka över skogen, som om den var en tyst beskyddare av de levande varelserna och av den
+                tysta vinternatten.<br><br>
+                För Viktor representerade ugglan inte bara visdom och skönhet, utan också naturens egna väktare – en
+                varelse som genom sin närvaro upprätthåller balansen i skogen. Det var just denna känsla av en natur som
+                var både ödslig och trygg, både föränderlig och oföränderlig, som han ville fånga i "Väktare i skogen".
+                Målningen är inte bara en skildring av en nattlig scen; den är en hyllning till den mystik och kraft som
+                finns i de djupa skogarna och den natur som vaktar våra drömmar.<br><br>
+                Viktor har berättat att han ofta har blivit fascinerad av hur ugglor har symboliserat både visdom och
+                mystik i olika kulturer genom historien. I denna målning ville han uttrycka det förhållande mellan
+                människan och naturen – en relation där vi ibland är åskådare, ibland beskyddare, men alltid en del av
+                det större systemet. Ugglan i "Väktare i skogen" är en metafor för att vi alla har en plats i den vida
+                och gåtfulla världen.
             </p>
-            <p><i>Visste du att ugglor har assymetriska öron? Om inte, spana in videon nedan och lär dig mer om dessa spektakulära fåglar!</i><br><br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Aj17Xsjt4sc?si=nvzbFBzpHVnxVYyi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <p><i>Visste du att ugglor har assymetriska öron? Om inte, spana in videon nedan och lär dig mer om dessa
+                    spektakulära fåglar!</i><br><br>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Aj17Xsjt4sc?si=nvzbFBzpHVnxVYyi"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </div>
     </div>
@@ -73,60 +90,59 @@
     <script>
         const images = [
             { src: "bild5.jpeg", caption: "" },
-            { src: "k5b2.jpg", caption: "Ugglor har symboliserat både visdom och mystik i olika kulturer genom historien."},
+            { src: "k5b2.jpg", caption: "Ugglor har symboliserat både visdom och mystik i olika kulturer genom historien." },
         ];
 
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-    const slideshowImage = document.getElementById("slideshow-image");
-    const nextButton = document.getElementById("next-button");
-    const prevButton = document.getElementById("prev-button");
-    const imageCounter = document.getElementById("image-counter");
-    const imageCaption = document.getElementById("image-caption");
+        const slideshowImage = document.getElementById("slideshow-image");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+        const imageCounter = document.getElementById("image-counter");
+        const imageCaption = document.getElementById("image-caption");
 
-    function updateImage() {
-        slideshowImage.src = images[currentIndex].src;
-        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-        const caption = images[currentIndex].caption;
-        imageCaption.textContent = caption;
-        imageCaption.style.display = caption ? "block" : "none";
-    }
+        function updateImage() {
+            slideshowImage.src = images[currentIndex].src;
+            imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+            const caption = images[currentIndex].caption;
+            imageCaption.textContent = caption;
+            imageCaption.style.display = caption ? "block" : "none";
+        }
 
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
         updateImage();
-    });
-
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-
-    updateImage();
     </script>
 
     <script>
-    const artworkData = {
-        title: "Väktare i skogen",
-        artist: "Viktor Persson",
-        year: "2014",
-        image: "bild5.jpeg"
-    };
-    
-    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
-        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-        
-        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
-        if (!alreadyExists) {
-            favorites.push(artworkData);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            alert("Konstverket har lagts till i dina favoriter!");
-        } else {
-            alert("Detta konstverk finns redan i dina favoriter.");
-        }
-    });
+        const artworkData = {
+            title: "Väktare i skogen",
+            artist: "Viktor Persson",
+            year: "2014",
+            image: "bild5.jpeg"
+        };
+
+        document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+            if (!alreadyExists) {
+                favorites.push(artworkData);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                alert("Konstverket har lagts till i dina favoriter!");
+            } else {
+                alert("Detta konstverk finns redan i dina favoriter.");
+            }
+        });
     </script>
-    
-    <script src="hamburger-menu.js"></script>
 </body>
+
 </html>

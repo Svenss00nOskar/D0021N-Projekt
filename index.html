@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Konsthall Tornedalen</title>
-    <link rel="stylesheet" href="style.css">
 
-    <!--
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konsthall Tornedalen</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!--
     In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
     must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
     "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
     blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
     not yet loaded, this may cause a flash of unstyled content."
     -->
-    <script src="script.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="hamburger-menu.js"></script>
 </head>
+
 <body>
-    <header class="gB">
-        <div class="logo gB">
-            <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
-        </div>
-        <nav class="gB nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
-            <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
-            <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
-            <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
-            <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
-            <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
-            <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
-            <button id="language-toggle">English</button>
-            <a id="extra"></a>
-        </nav>
-        <button class="hamburger" aria-label="Toggle navigation">
-          ☰
-        </button>
-    </header>
-
-<div id="slideshowBox" class="gB text-align-center">
-  <div class="slideWithCaptionBox gB">
-    <img src="solnedgang.avif" alt="Solnedgång" data-sv="Solnedgång" data-en="Sunset">
-    <div class="caption gB" data-sv="Verk av fiktiva Eva-Johanna Grums från Luleå" data-en="Work by fictional Eva-Johanna Grums from Luleå">Verk av fiktiva Eva-Johanna Grums från Luleå</div>
+  <header>
+    <div class="logo">
+      <img src="konsthalltornedalenlogo.png" alt="Konsthall Tornedalen">
+    </div>
+    <nav class="nav-links">
+      <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+        utställning</a>
+      <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
+      <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
+      <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
+      <a href="butik.html" data-sv="Butik" data-en="Shop">Butik</a>
+      <a href="arthotell.html" data-sv="Arthotell" data-en="Arthotell">Arthotell</a>
+      <a href="index.html" data-sv="Om oss" data-en="About us">Om oss</a>
+      <button id="language-toggle">English</button>
+      <a id="extra"></a>
+    </nav>
+    <button class="hamburger" aria-label="Toggle navigation">
+      ☰
+    </button>
+  </header>
+  <div id="slideshowBox" class="text-align-center">
+    <div class="slideWithCaptionBox">
+      <img src="solnedgang.avif" alt="Solnedgång" data-sv="Solnedgång" data-en="Sunset">
+      <div class="caption" data-sv="Verk av fiktiva Eva-Johanna Grums från Luleå"
+        data-en="Work by fictional Eva-Johanna Grums from Luleå">Verk av fiktiva Eva-Johanna Grums från Luleå</div>
+    </div>
+    <div class="slideWithCaptionBox">
+      <img src="gobelang.jpg" alt="Gobeläng" data-sv="Gobeläng" data-en="Tapestry">
+      <div class="caption" data-sv="Verk av fiktiva Lisa Persson från Boden"
+        data-en="Work by fictional Lisa Persson from Boden">Verk av fiktiva Lisa Persson från Boden</div>
+    </div>
+    <div class="slideWithCaptionBox active">
+      <img src="renar.jpg" alt="Renar" data-sv="Renar" data-en="Reindeer">
+      <div class="caption" data-sv="Verk av fiktiva Jan-Per Findal från Stora Fjällträsk"
+        data-en="Work by fictional Jan-Per Findal from Stora Fjällträsk">Verk av fiktiva Jan-Per Findal från Stora
+        Fjällträsk</div>
+    </div>
+    <span id="slideshowTooltip">Bildspelet pausar när markören är på bilden. Klicka för att stänga av (oberoende av var
+      markören finns). Klicka igen för att starta.</span>
   </div>
-  <div class="slideWithCaptionBox gB">
-    <img src="gobelang.jpg" alt="Gobeläng" data-sv="Gobeläng" data-en="Tapestry">
-    <div class="caption gB" data-sv="Verk av fiktiva Lisa Persson från Boden" data-en="Work by fictional Lisa Persson from Boden">Verk av fiktiva Lisa Persson från Boden</div>
-  </div>
-  <div class="slideWithCaptionBox active gB">
-    <img src="renar.jpg" alt="Renar" data-sv="Renar" data-en="Reindeer">
-    <div class="caption gB" data-sv="Verk av fiktiva Jan-Per Findal från Stora Fjällträsk" data-en="Work by fictional Jan-Per Findal from Stora Fjällträsk">Verk av fiktiva Jan-Per Findal från Stora Fjällträsk</div>
-  </div>
-  <span id="slideshowTooltip">Bildspelet pausar när markören är på bilden. Klicka för att stänga av (oberoende av var markören finns). Klicka igen för att starta.</span>
-</div>
 
-    <section class="welcomeTextBox gB text-align-center">
-        <p data-sv="Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten.	Vi tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit." data-en="A warm welcome to Konsthall Tornedalen! It is a place for art, nature and culture in the heart of Norrbotten. We will take you on an audiovisual art experience in a mountain environment if you take the step and travel here.">Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten.	Vi tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit.</p>
+  <section class="welcomeTextBox text-align-center">
+    <p data-sv="Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten.	Vi tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit."
+      data-en="A warm welcome to Konsthall Tornedalen! It is a place for art, nature and culture in the heart of Norrbotten. We will take you on an audiovisual art experience in a mountain environment if you take the step and travel here.">
+      Varmt välkommen till Konsthall Tornedalen! Det är en plats för konst, natur och kultur i hjärtat av Norrbotten. Vi
+      tar dig på en audiovisuell konstupplevelse i fjällnära miljö om du tar steget och reser hit.</p>
 
-        <p data-sv="Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar av vår utställning du vill ta del av eller kanske fördjupa dig i." data-en="With a mobile phone or tablet (which you can bring yourself or borrow on site in our cozy welcome room adjacent to the exhibition hall), you can choose at your own pace and according to your own taste which parts of our exhibition you want to take part in or perhaps delve into.">Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar av vår utställning du vill ta del av eller kanske fördjupa dig i.</p>
+    <p data-sv="Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar av vår utställning du vill ta del av eller kanske fördjupa dig i."
+      data-en="With a mobile phone or tablet (which you can bring yourself or borrow on site in our cozy welcome room adjacent to the exhibition hall), you can choose at your own pace and according to your own taste which parts of our exhibition you want to take part in or perhaps delve into.">
+      Med mobiltelefon eller surfplatta (som du kan ta med själv eller låna på plats i vårt mysiga välkomstrum i
+      anslutning till utställninghallen) kan du i din egen takt och efter eget tycke och smak på plats välja vilka delar
+      av vår utställning du vill ta del av eller kanske fördjupa dig i.</p>
 
-        <p data-sv="Barn välkomna!" data-en="Children welcome!">Barn välkomna!</p>
-    </section>
-    <script src="hamburger-menu.js"></script>
+    <p data-sv="Barn välkomna!" data-en="Children welcome!">Barn välkomna!</p>
+  </section>
 </body>
+
 </html>
-
-

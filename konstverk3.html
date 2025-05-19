@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Isälvens Viskning</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
     <script src="script.js" defer></script>
     <script src="summary.js"></script>
+    <script src="hamburger-menu.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -24,7 +19,8 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+                utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
             <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
@@ -53,14 +49,32 @@
             <h2>av Alice Forslund</h2>
             <h3>2004</h3>
             <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
-            <p>Välkommen till "Isälvens viskning", en målning som fångar en av naturens mest tysta och mystiska röster – den viskande isälven. I denna bild ser vi isens kalla, reflekterande yta som bär på historier om tider som varit och de krafter som har format landskapet. Genom målningens lugna och mjuka färgskala förmedlas en känsla av frid, men också av en hemlig kraft som ligger latent i varje isflak. Isälven, som en gång var en livskraftig flod under forntida tider, talar till oss genom sina tysta rörelser och ger oss en glimt av en tid för länge sedan.</p>
+            <p>Välkommen till "Isälvens viskning", en målning som fångar en av naturens mest tysta och mystiska röster –
+                den viskande isälven. I denna bild ser vi isens kalla, reflekterande yta som bär på historier om tider
+                som varit och de krafter som har format landskapet. Genom målningens lugna och mjuka färgskala förmedlas
+                en känsla av frid, men också av en hemlig kraft som ligger latent i varje isflak. Isälven, som en gång
+                var en livskraftig flod under forntida tider, talar till oss genom sina tysta rörelser och ger oss en
+                glimt av en tid för länge sedan.</p>
             <h3>En viskning från forntiden</h3>
-            <p>"Isälvens viskning" är resultatet av en intensiv period av introspektion för konstnären, Alice Forslund. Under sina många resor till norra Sverige hade Alice alltid fascinerats av de uråldriga landskapen som formats av is och tid. En särskild plats vid en av de gamla isälvarna fångade hennes intresse – en plats där isen, trots sin stillhet, nästan tycktes viska sina hemligheter till de som lyssnade noga.<br><br>
-                Alice ville skapa en målning som fångade denna tysta, nästan andliga närvaro. För henne var isälven inte bara en geologisk formation, utan också en levande entitet som bär på berättelser om klimatförändringar, förlorade civilisationer och de eviga förändringarna i naturen. Genom sina penseldrag och val av färger försökte Alice fånga den tysta viskningen av isen som rör sig genom landskapet – en viskning som påminner oss om naturens kraft att forma och förändra världen omkring oss.<br><br>
-                Verket speglar också Alice egen resa som konstnär. Hon berättar att hon under arbetet med "Isälvens viskning" var tvungen att hitta ett sätt att lyssna till sin egen inre tystnad för att kunna tolka isälvens viskande röst. Målningen, som är både stillsam och mystisk, bär på en känsla av att vara i kontakt med något större än oss själva – något tidlöst och evigt.
+            <p>"Isälvens viskning" är resultatet av en intensiv period av introspektion för konstnären, Alice Forslund.
+                Under sina många resor till norra Sverige hade Alice alltid fascinerats av de uråldriga landskapen som
+                formats av is och tid. En särskild plats vid en av de gamla isälvarna fångade hennes intresse – en plats
+                där isen, trots sin stillhet, nästan tycktes viska sina hemligheter till de som lyssnade noga.<br><br>
+                Alice ville skapa en målning som fångade denna tysta, nästan andliga närvaro. För henne var isälven inte
+                bara en geologisk formation, utan också en levande entitet som bär på berättelser om klimatförändringar,
+                förlorade civilisationer och de eviga förändringarna i naturen. Genom sina penseldrag och val av färger
+                försökte Alice fånga den tysta viskningen av isen som rör sig genom landskapet – en viskning som
+                påminner oss om naturens kraft att forma och förändra världen omkring oss.<br><br>
+                Verket speglar också Alice egen resa som konstnär. Hon berättar att hon under arbetet med "Isälvens
+                viskning" var tvungen att hitta ett sätt att lyssna till sin egen inre tystnad för att kunna tolka
+                isälvens viskande röst. Målningen, som är både stillsam och mystisk, bär på en känsla av att vara i
+                kontakt med något större än oss själva – något tidlöst och evigt.
             </p>
             <p><i>Visste du att is kan sjunga, på riktigt? Här kan du höra hur det låter!</i><br><br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/chxn2szgEAg?si=TzCLwrxRCmc7o2eo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/chxn2szgEAg?si=TzCLwrxRCmc7o2eo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </div>
     </div>
@@ -77,57 +91,56 @@
             { src: "k3b3.jpg", caption: "En plats som inspirerade Alice Forslunds konst." }
         ];
 
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-    const slideshowImage = document.getElementById("slideshow-image");
-    const nextButton = document.getElementById("next-button");
-    const prevButton = document.getElementById("prev-button");
-    const imageCounter = document.getElementById("image-counter");
-    const imageCaption = document.getElementById("image-caption");
+        const slideshowImage = document.getElementById("slideshow-image");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+        const imageCounter = document.getElementById("image-counter");
+        const imageCaption = document.getElementById("image-caption");
 
-    function updateImage() {
-        slideshowImage.src = images[currentIndex].src;
-        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-        const caption = images[currentIndex].caption;
-        imageCaption.textContent = caption;
-        imageCaption.style.display = caption ? "block" : "none";
-    }
+        function updateImage() {
+            slideshowImage.src = images[currentIndex].src;
+            imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+            const caption = images[currentIndex].caption;
+            imageCaption.textContent = caption;
+            imageCaption.style.display = caption ? "block" : "none";
+        }
 
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
         updateImage();
-    });
-
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-
-    updateImage();
     </script>
 
     <script>
-    const artworkData = {
-        title: "Isälvens viskning",
-        artist: "Alice Forslund",
-        year: "2004",
-        image: "bild3.png"
-    };
-    
-    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
-        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-        
-        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
-        if (!alreadyExists) {
-            favorites.push(artworkData);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            alert("Konstverket har lagts till i dina favoriter!");
-        } else {
-            alert("Detta konstverk finns redan i dina favoriter.");
-        }
-    });
+        const artworkData = {
+            title: "Isälvens viskning",
+            artist: "Alice Forslund",
+            year: "2004",
+            image: "bild3.png"
+        };
+
+        document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+            if (!alreadyExists) {
+                favorites.push(artworkData);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                alert("Konstverket har lagts till i dina favoriter!");
+            } else {
+                alert("Detta konstverk finns redan i dina favoriter.");
+            }
+        });
     </script>
-    
-    <script src="hamburger-menu.js"></script>
 </body>
+
 </html>

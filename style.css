@@ -1,25 +1,17 @@
-
-/* To see these borders of the "gB" class during development, "turn on" by removing the comment tags around it. */
-
-/*
-div.gB {outline: 1px solid tomato;}
-header.gB {outline: 1px solid cyan;}
-section.gB {outline: 1px solid royalblue;}
-p.gB {outline: 1px solid lightgreen;}
-*/
-
 /* Relaterat till bilder på aktuell utställning-sidan */
 
 #clickableImages {
   display: grid;
+
   a {
-      text-decoration: none;
-      color: black;
+    text-decoration: none;
+    color: black;
   }
+
   img {
-      width: 200px;
-      height: 150px;
-      border-radius: 5%;
+    width: 200px;
+    height: 150px;
+    border-radius: 5%;
   }
 }
 
@@ -27,8 +19,14 @@ p.gB {outline: 1px solid lightgreen;}
   object-fit: cover;
 }
 
+@media (max-width: 400px) {
+  .caption {
+    font-size: 0.85em;
+    padding: 6px;
+  }
+}
 
-/* Mobiler (upp till 599px) */
+/* Mobiler (upp till 600px) */
 @media (max-width: 600px) {
 
   .hamburger {
@@ -42,7 +40,7 @@ p.gB {outline: 1px solid lightgreen;}
 
   header {
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 1000;
     display: flex;
   }
@@ -50,30 +48,35 @@ p.gB {outline: 1px solid lightgreen;}
 
   nav {
     display: none;
-}
+  }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  background-color: white;
-  width: 100%;
-  height: 100vh; 
-}
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+  }
 
-.nav-links.active {
-  display: flex;
-  font-size: large;
-}
+  .nav-links.active {
+    display: flex;
+    font-size: large;
+  }
 
-#language-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  padding: 10px;
-  padding-bottom: 100px;
-}
+  #language-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    padding-bottom: 100px;
+  }
+
+  .caption {
+    font-size: 0.95em;
+    padding: 8px;
+  }
 
 
   #clickableImages {
@@ -103,7 +106,8 @@ p.gB {outline: 1px solid lightgreen;}
 
   .slideWithCaptionBox img {
     border-radius: 10px;
-    display: flex;  /* gets rid of a few pixels space below each image */
+    display: flex;
+    /* Tar bort några pixlars mellanrum under varje bild */
     height: 200px;
     width: 200px;
   }
@@ -114,7 +118,7 @@ p.gB {outline: 1px solid lightgreen;}
 
 }
 
-/* Surfplattor stående (600px till 899px) */
+/* Surfplattor stående (600px till 900px) */
 @media (min-width: 600px) and (max-width: 900px) {
 
   .hamburger {
@@ -128,38 +132,38 @@ p.gB {outline: 1px solid lightgreen;}
 
   nav {
     display: none;
-}
+  }
 
-header {
-  position: sticky;
-  top:0;
-  z-index: 1000;
-  display: flex;
-}
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+  }
 
-.nav-links {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 100%;
-  background-color: white;
-  width: 100%;
-  height: 100vh; 
-}
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+  }
 
-.nav-links.active {
-  display: flex;
-  font-size: large;
-  padding-bottom: 50px;
-}
+  .nav-links.active {
+    display: flex;
+    font-size: large;
+    padding-bottom: 50px;
+  }
 
-#language-toggle {
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  padding: 10px;
-  padding-bottom: 100px;
-} 
+  #language-toggle {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    padding-bottom: 100px;
+  }
 
   #clickableImages {
     grid-template-columns: 1fr 1fr;
@@ -168,7 +172,7 @@ header {
       width: 200px;
       height: 150px;
       border-radius: 5%;
-  }
+    }
   }
 
   .main-content {
@@ -186,93 +190,95 @@ header {
 
   #slideshow-image {
     max-width: 850px;
-    width:500px;
+    width: 500px;
     height: 500px;
     object-fit: contain;
     background-color: rgba(190, 190, 180, 0.5);
+  }
+
+  .slideWithCaptionBox img {
+    border-radius: 10px;
+    display: flex;
+    /* Tar bort några pixlars mellanrum under varje bild */
+    height: 200px;
+    width: 200px;
+  }
+
+
+  iframe {
+    width: 500px;
+  }
+
 }
 
-.slideWithCaptionBox img {
-  border-radius: 10px;
-  display: flex;  /* gets rid of a few pixels space below each image */
-  height: 200px;
-  width: 200px;
-}
-
-
- iframe {
-  width: 500px;
- }
-
-}
-
-/* Surfplattor liggande, små laptops (900px till 1199px) */
+/* Surfplattor liggande, små laptops (900px till 1200px) */
 @media (min-width: 900px) and (max-width: 1200px) {
 
-.hamburger {
-  display: none;
-}  
+  .hamburger {
+    display: none;
+  }
 
-  
-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  margin-left: 10px;
-  flex: 1;
-  align-items: center;
-}
 
-#extra {
-  display:none;
-}
-  
+  nav {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-left: 10px;
+    flex: 1;
+    align-items: center;
+  }
+
+  #extra {
+    display: none;
+  }
+
   #clickableImages {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
   .fixed-image {
-    position:sticky;
+    position: sticky;
     top: 0;
     height: 100vh;
-    width: 45%; 
+    width: 45%;
     flex-shrink: 0;
     overflow: hidden;
     padding-left: 40px;
-}
+  }
 
-.scrolling-content {
-  width: 55%;
-  max-width: 1200px; 
-  padding: 20px;
-  overflow-y: auto;
-  text-align: center;
-  align-items: center;
-  padding-left: 40px;
-  padding-right: 40px;
-}
+  .scrolling-content {
+    width: 55%;
+    max-width: 1200px;
+    padding: 20px;
+    overflow-y: auto;
+    text-align: center;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 
-#slideshow-image {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background-color: rgba(190, 190, 180, 0.5);
-}
+  #slideshow-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: rgba(190, 190, 180, 0.5);
+  }
 
-.slideWithCaptionBox img {
-  border-radius: 10px;
-  display: flex;  /* gets rid of a few pixels space below each image */
-  height: 250px;
-}
+  .slideWithCaptionBox img {
+    border-radius: 10px;
+    display: flex;
+    /* Tar bort några pixlars mellanrum under varje bild */
+    height: 250px;
+  }
 
-#language-toggle {
-  padding: 5px 10px;
-  width: 74px;
-}
+  #language-toggle {
+    padding: 5px 10px;
+    width: 74px;
+  }
 
-iframe {
-  max-width: 100%;
+  iframe {
+    max-width: 100%;
 
-}
+  }
 
 }
 
@@ -281,9 +287,9 @@ iframe {
 
   .hamburger {
     display: none;
-  }  
-  
-    
+  }
+
+
   nav {
     display: flex;
     flex-wrap: nowrap;
@@ -291,33 +297,34 @@ iframe {
     flex: 1;
     align-items: center;
   }
-  
+
   #extra {
-    display:none;
+    display: none;
   }
-    
-    #clickableImages {
-      grid-template-columns: 1fr 1fr 1fr;
-      img {
-        width: 300px;
-        height: 250px;
-        border-radius: 5%;
+
+  #clickableImages {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    img {
+      width: 300px;
+      height: 250px;
+      border-radius: 5%;
     }
-    }
-  
-    .fixed-image {
-      position:sticky;
-      top: 0;
-      height: 100vh;
-      width: 45%; 
-      flex-shrink: 0;
-      overflow: hidden;
-      padding-left: 40px;
   }
-  
+
+  .fixed-image {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 45%;
+    flex-shrink: 0;
+    overflow: hidden;
+    padding-left: 40px;
+  }
+
   .scrolling-content {
     width: 55%;
-    max-width: 1200px; 
+    max-width: 1200px;
     padding: 20px;
     overflow-y: auto;
     text-align: center;
@@ -325,28 +332,29 @@ iframe {
     padding-left: 40px;
     padding-right: 40px;
   }
-  
+
   #slideshow-image {
     width: 100%;
     height: 100%;
     object-fit: contain;
     background-color: rgba(190, 190, 180, 0.5);
   }
-  
+
   .slideWithCaptionBox img {
     border-radius: 10px;
-    display: flex;  /* gets rid of a few pixels space below each image */
+    display: flex;
+    /* Tar bort några pixlars mellanrum under varje bild */
     height: 300px;
   }
-  
+
   #language-toggle {
     padding: 5px 10px;
     width: 74px;
   }
-  
+
   iframe {
     max-width: 100%;
-  
+
   }
 
 }
@@ -354,49 +362,51 @@ iframe {
 
 
 body {
-  color: black;     /* set to #333 by ChatGPT */
-  display: grid;  
+  color: black;
+  display: grid;
   font-family: Arial, sans-serif;
-  font-size: 15px;  /* set by ChatGPT */
+  font-size: 15px;
   margin: 0;
   padding: 0 15px 15px 15px;
 }
 
 
 header {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    padding: 10px;
-    flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 10px;
+  flex-wrap: wrap;
 }
 
 
 .logo img {
-    height: 70px;
+  height: 70px;
 }
 
 
 nav a {
-    text-align: center;
-    flex: 1;
-    text-decoration: none;
-    color: black; /* needs to be set here since it's links; originally #333 by ChatGPT */
+  text-align: center;
+  flex: 1;
+  text-decoration: none;
+  color: black;
 
 }
 
 
 .emptyPageTxt {
-	font-size: 20px;
-	text-align: center;
-	margin-top: 100px;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 100px;
 }
 
 
 #slideshowBox {
   cursor: pointer;
-  margin: auto;        /* horizontally centers slideWithCaptionBox */
-  position: relative;  /* for the tool tip's vertical positioning  */
+  margin: auto;
+  /* Centrerar slideWithCaptionBox horisontellt */
+  position: relative;
+  /* För tooltip-elementets vertikala positionering */
 }
 
 
@@ -404,17 +414,23 @@ nav a {
   background-color: black;
   color: #fff;
   border-radius: 6px;
-  padding: 5px 3px;    /* vertical horizontal */
-  position: absolute;  /* allows positioning the tooltip with z-index */
-  text-align: center;  /* horizontally centers the text in the tooltip */
+  padding: 5px 3px;
+  /* vertikalt horizontellt */
+  position: absolute;
+  /* Möjliggör positionering av tooltip-elementet med z-index */
+  text-align: center;
+  /* Centrerar texten horisontellt i tooltip-elementet. */
   visibility: hidden;
   width: 170px;
-  z-index: 1;  
+  z-index: 1;
 
-  /* "left", "top" and "translate" horizontally centers images tooltip despite the use of "position: absolute" */
-  left: 50%;             /* moves the element's left edge to the center          */
-  top: 50%;              /* moves the element's top edge to the center           */
-  translate: -50% -50%;  /* moves the element back half its own width and height */
+  /* "left", "top" och "translate" centrerar bilderna horisontellt i tooltip-elementet trots användning av "position: absolute" */
+  left: 50%;
+  /* Flyttar elementets vänstra kant till mitten. */
+  top: 50%;
+  /* Flyttar elementets övre kant till mitten. */
+  translate: -50% -50%;
+  /* Flyttar elementet tillbaka hälften av dess egen bredd och höjd. */
 }
 
 
@@ -425,14 +441,11 @@ nav a {
 
 .slideWithCaptionBox {
   opacity: 0;
-  position: absolute;  /* displays all images at the same location */
-
-  /* ADJUST TIMING HERE! (duration of opacity change in seconds); not longer duration than set in the JavaScript! */
+  position: absolute;
+  /* Visar alla bilder på samma plats. */
   transition: opacity 1.5s ease;
-
-  /* "left" and "translate" horizontally centers images (of various sizes) despite the use of "position: absolute" */
-  left: 50%;          /* moves the element's left edge to the center */
-  translate: -50% 0;  /* moves the element back half its own width   */
+  left: 50%;
+  translate: -50% 0;
 }
 
 
@@ -448,178 +461,159 @@ nav a {
   padding: 8px;
 }
 
-
-/* Dessa "@media" EJ UNDERSÖKTA! Tips givet av ChatGPT. */
-
-/* Mobilanpassning */
-@media (max-width: 600px) {
-  .caption {
-    font-size: 0.95em;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 400px) {
-  .caption {
-    font-size: 0.85em;
-    padding: 6px;
-  }
-}
-
-
 .welcomeTextBox {
   margin-top: 25px;
   padding: 0 15px;
 }
 
 
-.text-align-center{
-    text-align: center;
+.text-align-center {
+  text-align: center;
 }
 
 /* Relaterat till infosidor för konstverk */
 
 .main-content {
-    display: flex;
-    margin-top: 20px;
+  display: flex;
+  margin-top: 20px;
 }
 
 .fixed-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 
 .image-wrapper {
-    position: relative;
-    height: 100%;
-    width: 100%;
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 #image-counter {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 #prev-button,
 #next-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent; 
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 0 5px 5px 0; 
-    color: white; 
-    z-index: 2; 
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  color: white;
+  z-index: 2;
 }
 
 #prev-button {
-    left: 0;
+  left: 0;
 }
 
 #next-button {
-    right: 0;
-    border-radius: 5px 0 0 5px;
+  right: 0;
+  border-radius: 5px 0 0 5px;
 }
 
 #prev-button:hover,
 #next-button:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .image-caption {
-    position: absolute;
-    bottom: 40px; 
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5); 
-    color: #fff;
-    padding: 10px;
-    font-size: 14px;
-    text-align: center;
-    box-sizing: border-box;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .image-wrapper {
-    position: relative;
+  position: relative;
 }
 
 /*Relaterat till quiz-funktionen*/
 
 .modal {
-    display: none; 
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.6); 
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-    text-align: left;
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+  text-align: left;
 }
 
 .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    font-weight: bold;
-    color: #aaa;
-    cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
 }
 
 .close:hover {
-    color: #000;
+  color: #000;
 }
 
 #quiz-form .question {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #quiz-result {
-    margin-top: 15px;
-    font-weight: bold;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 #open-quiz-btn {
-    background-color: #333;
-    color: #fff;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 25px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    margin: 30px auto;
-    display: block;
+  background-color: #333;
+  color: #fff;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 30px auto;
+  display: block;
 }
 
 #open-quiz-btn:hover {
-    transform: translateY(-2px);
-    background-color: #4e8b87;
+  transform: translateY(-2px);
+  background-color: #4e8b87;
 }
 
 
@@ -638,7 +632,7 @@ nav a {
   padding-right: 24px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 5px 3px 7px  #000000;
+  box-shadow: 5px 3px 7px #000000;
   animation: pulse 2s infinite;
 }
 
@@ -652,9 +646,11 @@ nav a {
   0% {
     box-shadow: 0 0 0 0 rgb(232, 47, 47);
   }
+
   70% {
     box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
   }
+
   100% {
     box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
   }
@@ -663,183 +659,183 @@ nav a {
 .summary-btn-div {
   padding-top: 50px;
 }
-  
+
 /* Relaterat till den personliga summeringen */
 
 .summary-wrapper {
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 20px;
-    background-color: rgba(245, 245, 245, 0.9);
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 20px;
+  background-color: rgba(245, 245, 245, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 
 section {
-    margin-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 h2 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 16px;
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 4px;
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 4px;
 }
 
 .visited-list {
-    list-style-type: disc;
-    padding-left: 20px;
-    margin-bottom: 16px;
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 16px;
 }
 
 .local-note {
-    font-size: 14px;
-    color: #666;
-    margin-top: 8px;
-    margin-bottom: 16px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+  margin-bottom: 16px;
 }
 
 .clearTrackingButton {
-    background-color: #a63d40;
-    color: white;
-    padding: 10px 18px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-top: 10px;
+  background-color: #a63d40;
+  color: white;
+  padding: 10px 18px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
 }
 
 .clearTrackingButton:hover {
-    background-color: #822d30;
+  background-color: #822d30;
 }
 
 .favorites-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .favorite-artwork {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    width: 250px;
-    box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
-    text-align: center;
-    margin: 10px 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px 0;
 }
 
 .favorite-artwork img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin-bottom: 8px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 8px;
 }
 
 .favorite-artwork h3 {
-    font-size: 18px;
-    margin: 4px 0;
+  font-size: 18px;
+  margin: 4px 0;
 }
 
 .favorite-artwork p {
-    font-size: 14px;
-    color: #555;
+  font-size: 14px;
+  color: #555;
 }
 
 .reflections-section {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 #reflection-input {
-    width: 100%;
-    height: 120px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    resize: vertical;
+  width: 100%;
+  height: 120px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
 }
 
 .save-reflection-btn {
-    margin-top: 10px;
-    background-color: #4a6fa5;
-    color: white;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
+  margin-top: 10px;
+  background-color: #4a6fa5;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .save-reflection-btn:hover {
-    background-color: #3d5d85;
+  background-color: #3d5d85;
 }
 
 .upload-section input {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 #uploaded-images-preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 #uploaded-images-preview img,
 .uploaded-image-wrapper img {
-    max-height: 100px;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  max-height: 100px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 .uploaded-image-wrapper {
-    position: relative;
-    display: inline-block;
-    margin: 8px;
+  position: relative;
+  display: inline-block;
+  margin: 8px;
 }
 
 .delete-image-btn {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    background-color: rgba(255, 0, 0, 0.8);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    font-size: 16px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s ease;
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
 }
 
 .delete-image-btn:hover {
-    background-color: rgba(200, 0, 0, 1);
+  background-color: rgba(200, 0, 0, 1);
 }
 
 .preview-button {
-    display: block;
-    margin: 40px auto;
-    padding: 12px 24px;
-    background-color: #747373;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1em;
-    font-family: inherit;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 40px auto;
+  padding: 12px 24px;
+  background-color: #747373;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .preview-button:hover {
-    background-color: #3e5f5f;
-    transform: scale(1.03);
+  background-color: #3e5f5f;
+  transform: scale(1.03);
 }

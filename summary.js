@@ -5,15 +5,15 @@ let visitedPages = JSON.parse(localStorage.getItem('visitedPages')) || [];
 const currentPage = document.title || window.location.pathname;
 
 if (currentPage != "Besökssummering") {
-  if (!visitedPages.includes(currentPage)) {
-    visitedPages.push(currentPage);
-    localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-  }
+    if (!visitedPages.includes(currentPage)) {
+        visitedPages.push(currentPage);
+        localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    }
 }
 
 // Funktion för att hämta besökssammanfattning (om du vill använda)
 function getVisitSummary() {
-  return JSON.parse(localStorage.getItem('visitedPages')) || [];
+    return JSON.parse(localStorage.getItem('visitedPages')) || [];
 }
 
 function previewSummary() {
@@ -30,6 +30,7 @@ function previewSummary() {
         <html>
         <head>
             <title>Din Personliga Summering</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <style>
                 body {
                     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

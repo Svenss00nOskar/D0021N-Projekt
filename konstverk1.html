@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renarnas Färd</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
     <script src="script.js" defer></script>
     <script src="summary.js"></script>
+    <script src="hamburger-menu.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -24,7 +19,8 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+                utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
             <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
@@ -36,7 +32,7 @@
         </nav>
         <button class="hamburger" aria-label="Toggle navigation">
             ☰
-          </button>
+        </button>
     </header>
     <div class="main-content">
         <div class="fixed-image">
@@ -53,16 +49,33 @@
             <h2>av Elin Norrström</h2>
             <h3>1982</h3>
             <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
-            <p>Välkommen till "Renarnas färd", en målning som fångar ett kraftfullt och levande ögonblick i naturen. Här ser vi en grupp renar rusa genom en våt skog, där vatten stänker upp från marken i varje språng. Den tunga, fuktiga luften och den genomdränkta terrängen förmedlar en intensiv känsla av rörelse, energi och samspel med elementen. Varje vattenstänk, varje regndroppe som vilar på grenarna, blir en del av renarnas färd – en resa genom ett landskap i ständig förvandling. Målningen är en hyllning till djurens urkraft och till det vilda, oförutsägbara i den nordiska naturen.</p>
+            <p>Välkommen till "Renarnas färd", en målning som fångar ett kraftfullt och levande ögonblick i naturen. Här
+                ser vi en grupp renar rusa genom en våt skog, där vatten stänker upp från marken i varje språng. Den
+                tunga, fuktiga luften och den genomdränkta terrängen förmedlar en intensiv känsla av rörelse, energi och
+                samspel med elementen. Varje vattenstänk, varje regndroppe som vilar på grenarna, blir en del av
+                renarnas färd – en resa genom ett landskap i ständig förvandling. Målningen är en hyllning till djurens
+                urkraft och till det vilda, oförutsägbara i den nordiska naturen.</p>
             <h3>Den okända konstnären</h3>
-            <p>Det sägs att "Renarnas färd" är resultatet av en tillfällig vision som uppstod för många år sedan. Konstnären bakom verket, som går under namnet Elin Norrström, var en ensam vandrande själ som ofta utforskade de norrländska skogarna i jakten på inspiration. En tidig morgon, när dimman låg tjock över marken och regnet sakta duggade ner, såg Elin en flock renar komma fram ur dimman. De sprang snabbt genom den våta marken, deras rörelser mjuka men bestämda.<br><br>
-                Elin, som hade vandrat länge i tystnad, såg detta som ett tecken och skyndade sig att fånga ögonblicket med sin pensel. Renarna representerade för henne både frihet och motståndskraft – två krafter som ofta samspelar i naturen. Målningen skapades under en intensifierad period av kreativitet, där hon lät penseln följa renarnas rörelser genom den blöta skogen, utan att någonsin stanna upp för att tänka på detaljer.<br><br>
-                Det var först många år senare, när Elin samlade sina verk för en utställning, som hon insåg att "Renarnas färd" hade blivit mer än bara en målning – den hade blivit en symbol för den resa vi alla gör genom livets oavbrutna skiftningar.
+            <p>Det sägs att "Renarnas färd" är resultatet av en tillfällig vision som uppstod för många år sedan.
+                Konstnären bakom verket, som går under namnet Elin Norrström, var en ensam vandrande själ som ofta
+                utforskade de norrländska skogarna i jakten på inspiration. En tidig morgon, när dimman låg tjock över
+                marken och regnet sakta duggade ner, såg Elin en flock renar komma fram ur dimman. De sprang snabbt
+                genom den våta marken, deras rörelser mjuka men bestämda.<br><br>
+                Elin, som hade vandrat länge i tystnad, såg detta som ett tecken och skyndade sig att fånga ögonblicket
+                med sin pensel. Renarna representerade för henne både frihet och motståndskraft – två krafter som ofta
+                samspelar i naturen. Målningen skapades under en intensifierad period av kreativitet, där hon lät
+                penseln följa renarnas rörelser genom den blöta skogen, utan att någonsin stanna upp för att tänka på
+                detaljer.<br><br>
+                Det var först många år senare, när Elin samlade sina verk för en utställning, som hon insåg att
+                "Renarnas färd" hade blivit mer än bara en målning – den hade blivit en symbol för den resa vi alla gör
+                genom livets oavbrutna skiftningar.
             </p>
-            <p><i>Hur låter renar? Spana in videon nedan och låt dig förflyttas in i de Tornedalska skogarna!</i><br><br>
+            <p><i>Hur låter renar? Spana in videon nedan och låt dig förflyttas in i de Tornedalska
+                    skogarna!</i><br><br>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/5G8CDeJHXJY?si=Xnot5HD-hQGSdV9J"
-                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </div>
     </div>
@@ -79,57 +92,56 @@
             { src: "k1b3.jpg", caption: "Den verkliga världen som inspirerade Elin Norrström. Den stillsamma, dimmiga morgonen där naturen berättade sin egen historia." }
         ];
 
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-    const slideshowImage = document.getElementById("slideshow-image");
-    const nextButton = document.getElementById("next-button");
-    const prevButton = document.getElementById("prev-button");
-    const imageCounter = document.getElementById("image-counter");
-    const imageCaption = document.getElementById("image-caption");
+        const slideshowImage = document.getElementById("slideshow-image");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+        const imageCounter = document.getElementById("image-counter");
+        const imageCaption = document.getElementById("image-caption");
 
-    function updateImage() {
-        slideshowImage.src = images[currentIndex].src;
-        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-        const caption = images[currentIndex].caption;
-        imageCaption.textContent = caption;
-        imageCaption.style.display = caption ? "block" : "none";
-    }
-
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
-        updateImage();
-    });
-
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-
-    updateImage();
-    </script>
-    
-    <script>
-    const artworkData = {
-        title: "Renarnas Färd",
-        artist: "Elin Norrström",
-        year: "1982",
-        image: "bild1.jpeg"
-    };
-    
-    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
-        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-        
-        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
-        if (!alreadyExists) {
-            favorites.push(artworkData);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            alert("Konstverket har lagts till i dina favoriter!");
-        } else {
-            alert("Detta konstverk finns redan i dina favoriter.");
+        function updateImage() {
+            slideshowImage.src = images[currentIndex].src;
+            imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+            const caption = images[currentIndex].caption;
+            imageCaption.textContent = caption;
+            imageCaption.style.display = caption ? "block" : "none";
         }
-    });
+
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
+        updateImage();
     </script>
-    
-    <script src="hamburger-menu.js"></script>
+
+    <script>
+        const artworkData = {
+            title: "Renarnas Färd",
+            artist: "Elin Norrström",
+            year: "1982",
+            image: "bild1.jpeg"
+        };
+
+        document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+            if (!alreadyExists) {
+                favorites.push(artworkData);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                alert("Konstverket har lagts till i dina favoriter!");
+            } else {
+                alert("Detta konstverk finns redan i dina favoriter.");
+            }
+        });
+    </script>
 </body>
+
 </html>

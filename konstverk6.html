@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Första blomningen</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
     <script src="script.js" defer></script>
     <script src="summary.js"></script>
+    <script src="hamburger-menu.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -24,7 +19,8 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+                utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
             <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
@@ -53,14 +49,33 @@
             <h2>av Elsa Bergström</h2>
             <h3>2022</h3>
             <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
-            <p>Välkommen till "Första blomningen", en skulptur som fångar ett av livets mest symboliska ögonblick – den första blomningen. I denna skulptur, som består av tre vita blommor, ser vi naturens kraft att återfödas och förnya sig. De mjuka, organiska formerna av blommorna fångar den sårbarhet och styrka som kännetecknar vårens första tecken. Varje blomma, i sin skepnad av både elegans och ömhet, speglar livets ständiga cykler av födelse och förnyelse. De vita blommorna, som sträcker sig mot ljuset, påminner oss om hopp, om nystart och om den skönhet som kan blomstra ur det enkla.</p>
+            <p>Välkommen till "Första blomningen", en skulptur som fångar ett av livets mest symboliska ögonblick – den
+                första blomningen. I denna skulptur, som består av tre vita blommor, ser vi naturens kraft att återfödas
+                och förnya sig. De mjuka, organiska formerna av blommorna fångar den sårbarhet och styrka som
+                kännetecknar vårens första tecken. Varje blomma, i sin skepnad av både elegans och ömhet, speglar livets
+                ständiga cykler av födelse och förnyelse. De vita blommorna, som sträcker sig mot ljuset, påminner oss
+                om hopp, om nystart och om den skönhet som kan blomstra ur det enkla.</p>
             <h3>Livets första steg</h3>
-            <p>"Första blomningen" är en skulptur som speglar en tid av förnyelse och hopp. Den är skapad av konstnären Elsa Bergström, som inspirerades av den tidiga våren i de nordiska landskapen. Elsa minns själv hur hon som barn brukade gå genom skogarna och fälten när snön började smälta bort och de första blommorna började dyka upp ur jorden. Den känsla av tystnad och skönhet som fyllde luften när blommorna bröt fram ur det kalla jorden var något hon ville fånga i sin skulptur.<br><br>
-                För Elsa representerar dessa tre blommor inte bara själva naturens förnyelse utan också människans egna upplevelser av att stå inför nya början. De vita blommorna symboliserar det rena, det oskrivna, och det oupptäckta som finns i varje nytt kapitel av livet. Genom sin skulptur ville Elsa förmedla en känsla av ömhet och styrka på samma gång – som om varje blomma är både ömtålig och stark, precis som de första stegen i en ny resa.<br><br>
-                Elsa berättar att hon arbetade länge med att hitta de rätta formerna för blommorna – former som skulle kännas både naturliga och tidlösa. För henne var det viktigaste att skulpturen inte bara skulle vara en återgivning av blommor, utan också förmedla deras inre livskraft och dynamik. "Första blomningen" är, på många sätt, en hyllning till livets enkelhet och det ständiga flödet av förnyelse som omger oss.
+            <p>"Första blomningen" är en skulptur som speglar en tid av förnyelse och hopp. Den är skapad av konstnären
+                Elsa Bergström, som inspirerades av den tidiga våren i de nordiska landskapen. Elsa minns själv hur hon
+                som barn brukade gå genom skogarna och fälten när snön började smälta bort och de första blommorna
+                började dyka upp ur jorden. Den känsla av tystnad och skönhet som fyllde luften när blommorna bröt fram
+                ur det kalla jorden var något hon ville fånga i sin skulptur.<br><br>
+                För Elsa representerar dessa tre blommor inte bara själva naturens förnyelse utan också människans egna
+                upplevelser av att stå inför nya början. De vita blommorna symboliserar det rena, det oskrivna, och det
+                oupptäckta som finns i varje nytt kapitel av livet. Genom sin skulptur ville Elsa förmedla en känsla av
+                ömhet och styrka på samma gång – som om varje blomma är både ömtålig och stark, precis som de första
+                stegen i en ny resa.<br><br>
+                Elsa berättar att hon arbetade länge med att hitta de rätta formerna för blommorna – former som skulle
+                kännas både naturliga och tidlösa. För henne var det viktigaste att skulpturen inte bara skulle vara en
+                återgivning av blommor, utan också förmedla deras inre livskraft och dynamik. "Första blomningen" är, på
+                många sätt, en hyllning till livets enkelhet och det ständiga flödet av förnyelse som omger oss.
             </p>
             <p><i>Följ med blomsterentusiasten John Feehan när han beskriver vitsippans blomning i april.</i><br><br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Be6l288e0hg?si=xHgmTiUsARuArPmj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Be6l288e0hg?si=xHgmTiUsARuArPmj"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </div>
     </div>
@@ -77,57 +92,56 @@
             { src: "k6b3.jpg", caption: "Första blomningen tar form." }
         ];
 
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-    const slideshowImage = document.getElementById("slideshow-image");
-    const nextButton = document.getElementById("next-button");
-    const prevButton = document.getElementById("prev-button");
-    const imageCounter = document.getElementById("image-counter");
-    const imageCaption = document.getElementById("image-caption");
+        const slideshowImage = document.getElementById("slideshow-image");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+        const imageCounter = document.getElementById("image-counter");
+        const imageCaption = document.getElementById("image-caption");
 
-    function updateImage() {
-        slideshowImage.src = images[currentIndex].src;
-        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-        const caption = images[currentIndex].caption;
-        imageCaption.textContent = caption;
-        imageCaption.style.display = caption ? "block" : "none";
-    }
+        function updateImage() {
+            slideshowImage.src = images[currentIndex].src;
+            imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+            const caption = images[currentIndex].caption;
+            imageCaption.textContent = caption;
+            imageCaption.style.display = caption ? "block" : "none";
+        }
 
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
         updateImage();
-    });
-
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-
-    updateImage();
     </script>
 
     <script>
-    const artworkData = {
-        title: "Första blomningen",
-        artist: "Elsa Bergström",
-        year: "2022",
-        image: "bild6.png"
-    };
-    
-    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
-        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-        
-        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
-        if (!alreadyExists) {
-            favorites.push(artworkData);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            alert("Konstverket har lagts till i dina favoriter!");
-        } else {
-            alert("Detta konstverk finns redan i dina favoriter.");
-        }
-    });
+        const artworkData = {
+            title: "Första blomningen",
+            artist: "Elsa Bergström",
+            year: "2022",
+            image: "bild6.png"
+        };
+
+        document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+            if (!alreadyExists) {
+                favorites.push(artworkData);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                alert("Konstverket har lagts till i dina favoriter!");
+            } else {
+                alert("Detta konstverk finns redan i dina favoriter.");
+            }
+        });
     </script>
-    
-    <script src="hamburger-menu.js"></script>
 </body>
+
 </html>

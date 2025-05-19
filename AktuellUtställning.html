@@ -1,20 +1,15 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aktuell Utställning</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
     <script src="script.js" defer></script>
+    <script src="hamburger-menu.js"></script>
 </head>
+
 <body class="text-align-center">
     <header>
         <div class="logo">
@@ -23,7 +18,8 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+                utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
             <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
@@ -40,13 +36,17 @@
     <main>
         <h1>Aktuell utställning: Tornedalens röster</h1>
         <p>
-            Från vårens första blomning till renarnas språng över fjällbäckar, från isälvens stilla andetag till rävens midnattsskuggor — här möter du naturens berättelser genom konst.
+            Från vårens första blomning till renarnas språng över fjällbäckar, från isälvens stilla andetag till rävens
+            midnattsskuggor — här möter du naturens berättelser genom konst.
         </p>
         <p>
-            Tornedalens röster är en utställning där skulptur, måleri och installation ger form åt landskapets själ. Varje verk är ett vittnesmål om det som växer, vandrar och viskar i norr: ugglans tysta blick, snöns fall genom skogen, hjärtat av glas som bultar med älvens puls.
+            Tornedalens röster är en utställning där skulptur, måleri och installation ger form åt landskapets själ.
+            Varje verk är ett vittnesmål om det som växer, vandrar och viskar i norr: ugglans tysta blick, snöns fall
+            genom skogen, hjärtat av glas som bultar med älvens puls.
         </p>
         <p>
-            Här berättas inga sagor. Här får du lyssna — till vindens språk, till spåren i mossan och till ditt eget avtryck i naturen.
+            Här berättas inga sagor. Här får du lyssna — till vindens språk, till spåren i mossan och till ditt eget
+            avtryck i naturen.
         </p>
     </main>
     <section id="clickableImages">
@@ -136,7 +136,7 @@
             }
         });
 
-        document.getElementById("quiz-form").addEventListener("submit", function(event) {
+        document.getElementById("quiz-form").addEventListener("submit", function (event) {
             event.preventDefault();
 
             const answers = {
@@ -153,9 +153,7 @@
             const result = document.getElementById("quiz-result");
             result.textContent = `Du fick ${score} av ${Object.keys(answers).length} rätt!`;
         });
-
-
-     </script>
-     <script src="hamburger-menu.js"></script>
+    </script>
 </body>
+
 </html>

@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Midnattssolen</title>
     <link rel="stylesheet" href="style.css">
-
-    <!--
-    In order to resolve which in Mozilla Firefox is described as follows, "defer" is needed, or this script call
-    must be placed AFTER the HTML content : "Uncaught TypeError: [some object] is null". May show as a warning:
-    "Layouten tvingades innan sidan laddades fullständigt. Om stilmallen inte har laddats ännu kan det orsaka en
-    blixt av ostylat innehåll." / "The layout was forced before the page was fully loaded. If the stylesheet has
-    not yet loaded, this may cause a flash of unstyled content."
-    -->
     <script src="script.js" defer></script>
     <script src="summary.js"></script>
+    <script src="hamburger-menu.js"></script>
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -24,7 +19,8 @@
             </a>
         </div>
         <nav class="nav-links">
-            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell utställning</a>
+            <a href="AktuellUtställning.html" data-sv="Aktuell utställning" data-en="Current exhibition">Aktuell
+                utställning</a>
             <a href="pa_gang.html" data-sv="På gång" data-en="Happening">På gång</a>
             <a href="ta_dig_hit.html" data-sv="Ta dig hit" data-en="Get here">Ta dig hit</a>
             <a href="odla_och_ata.html" data-sv="Odla och äta" data-en="Grow and eat">Odla och äta</a>
@@ -53,14 +49,33 @@
             <h2>av Emilie Lindholm</h2>
             <h3>1998</h3>
             <button id="favorite-artwork-btn">❤️ Lägg till i favoriter</button>
-            <p>Välkommen till "Midnattssolen", en målning som fångar ett ögonblick när naturens magi och mysterium möts vid den evigt ljusa midnattssolen. I denna bild står en röd räv, frimodig och vaksam, i ett fält som badar i det mjuka, gyllene ljuset från midnattssolen. Solens värme strålar genom landskapet, men dess ljus är unikt – det är det där sällsynta ljuset som inte riktigt försvinner, som sveper in världen i en drömsk och magisk atmosfär. Räven, med sina klara ögon och försiktiga hållning, verkar vara både en del av denna tysta natt och en främling i den.</p>
+            <p>Välkommen till "Midnattssolen", en målning som fångar ett ögonblick när naturens magi och mysterium möts
+                vid den evigt ljusa midnattssolen. I denna bild står en röd räv, frimodig och vaksam, i ett fält som
+                badar i det mjuka, gyllene ljuset från midnattssolen. Solens värme strålar genom landskapet, men dess
+                ljus är unikt – det är det där sällsynta ljuset som inte riktigt försvinner, som sveper in världen i en
+                drömsk och magisk atmosfär. Räven, med sina klara ögon och försiktiga hållning, verkar vara både en del
+                av denna tysta natt och en främling i den.</p>
             <h3>Räven och solens hemlighet</h3>
-            <p>"Midnattssolen" är en målning som växte fram under många av konstnären Emilie Lindholms nattliga vandringar i de norrländska fälten. För Emilie var midnattssolen inte bara ett fenomen i naturen, utan ett symboliskt ljus – ett ljus som både belyser och fördunklar. En natt, när hon var ute och vandrade vid solens zenit, stötte hon på en ensam röd räv som stod stilla i ett fält. Räven, med sitt rödaktiga pälsverk, verkade vara upplyst från alla håll av solens gyllene strålar, men samtidigt var skuggorna från fältets gräs så långsträckta och mystiska.<br><br>
-                Emilie såg denna scen som en metafor för naturens oändliga mysterier – den ljusa, men ändå mörka världen där allt är förbundet men samtidigt åtskilt. För Emilie representerade räven både frihet och vaksamhet, och det var just denna känsla av att vara både en del av naturen och samtidigt utanför den, som hon ville fånga i sin målning. Räven på bilden är på något sätt både osårbar och sårbar, och detta är en känsla Emilie ofta har upplevt i sin egen kontakt med naturen.<br><br>
-                I målningen försökte Emilie fånga detta unika ljus från midnattssolen, där världen verkar vara i ständig rörelse trots att klockan är långt efter midnatt. Målningens ljus är intensivt och belyser varje detalj i rävens päls, samtidigt som det smälter samman med nattens mystik och eviga tystnad.
+            <p>"Midnattssolen" är en målning som växte fram under många av konstnären Emilie Lindholms nattliga
+                vandringar i de norrländska fälten. För Emilie var midnattssolen inte bara ett fenomen i naturen, utan
+                ett symboliskt ljus – ett ljus som både belyser och fördunklar. En natt, när hon var ute och vandrade
+                vid solens zenit, stötte hon på en ensam röd räv som stod stilla i ett fält. Räven, med sitt rödaktiga
+                pälsverk, verkade vara upplyst från alla håll av solens gyllene strålar, men samtidigt var skuggorna
+                från fältets gräs så långsträckta och mystiska.<br><br>
+                Emilie såg denna scen som en metafor för naturens oändliga mysterier – den ljusa, men ändå mörka världen
+                där allt är förbundet men samtidigt åtskilt. För Emilie representerade räven både frihet och vaksamhet,
+                och det var just denna känsla av att vara både en del av naturen och samtidigt utanför den, som hon
+                ville fånga i sin målning. Räven på bilden är på något sätt både osårbar och sårbar, och detta är en
+                känsla Emilie ofta har upplevt i sin egen kontakt med naturen.<br><br>
+                I målningen försökte Emilie fånga detta unika ljus från midnattssolen, där världen verkar vara i ständig
+                rörelse trots att klockan är långt efter midnatt. Målningens ljus är intensivt och belyser varje detalj
+                i rävens päls, samtidigt som det smälter samman med nattens mystik och eviga tystnad.
             </p>
             <p><i>Upplev midnattssolens magiska ljusättning genom att spana in videon nedan.</i><br><br>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/Sl6DbRoX9X4?si=TaFznPkVluL5n3Jx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Sl6DbRoX9X4?si=TaFznPkVluL5n3Jx"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </p>
         </div>
     </div>
@@ -77,57 +92,56 @@
             { src: "k4b3.jpg", caption: "En bild på Emilies skissbok där de första idéerna för Midnattssolen tar form" }
         ];
 
-    let currentIndex = 0;
+        let currentIndex = 0;
 
-    const slideshowImage = document.getElementById("slideshow-image");
-    const nextButton = document.getElementById("next-button");
-    const prevButton = document.getElementById("prev-button");
-    const imageCounter = document.getElementById("image-counter");
-    const imageCaption = document.getElementById("image-caption");
+        const slideshowImage = document.getElementById("slideshow-image");
+        const nextButton = document.getElementById("next-button");
+        const prevButton = document.getElementById("prev-button");
+        const imageCounter = document.getElementById("image-counter");
+        const imageCaption = document.getElementById("image-caption");
 
-    function updateImage() {
-        slideshowImage.src = images[currentIndex].src;
-        imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
-        const caption = images[currentIndex].caption;
-        imageCaption.textContent = caption;
-        imageCaption.style.display = caption ? "block" : "none";
-    }
+        function updateImage() {
+            slideshowImage.src = images[currentIndex].src;
+            imageCounter.textContent = `${currentIndex + 1}/${images.length}`;
+            const caption = images[currentIndex].caption;
+            imageCaption.textContent = caption;
+            imageCaption.style.display = caption ? "block" : "none";
+        }
 
-    nextButton.addEventListener("click", () => {
-        currentIndex = (currentIndex + 1) % images.length;
+        nextButton.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateImage();
+        });
+
+        prevButton.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateImage();
+        });
+
         updateImage();
-    });
-
-    prevButton.addEventListener("click", () => {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        updateImage();
-    });
-
-    updateImage();
     </script>
 
     <script>
-    const artworkData = {
-        title: "Midnattssolen",
-        artist: "Emilie Lindholm",
-        year: "1998",
-        image: "bild4.png"
-    };
-    
-    document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
-        let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-        
-        const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
-        if (!alreadyExists) {
-            favorites.push(artworkData);
-            localStorage.setItem("favorites", JSON.stringify(favorites));
-            alert("Konstverket har lagts till i dina favoriter!");
-        } else {
-            alert("Detta konstverk finns redan i dina favoriter.");
-        }
-    });
+        const artworkData = {
+            title: "Midnattssolen",
+            artist: "Emilie Lindholm",
+            year: "1998",
+            image: "bild4.png"
+        };
+
+        document.getElementById("favorite-artwork-btn").addEventListener("click", () => {
+            let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+            const alreadyExists = favorites.some(fav => fav.title === artworkData.title);
+            if (!alreadyExists) {
+                favorites.push(artworkData);
+                localStorage.setItem("favorites", JSON.stringify(favorites));
+                alert("Konstverket har lagts till i dina favoriter!");
+            } else {
+                alert("Detta konstverk finns redan i dina favoriter.");
+            }
+        });
     </script>
-    
-    <script src="hamburger-menu.js"></script>
 </body>
+
 </html>
